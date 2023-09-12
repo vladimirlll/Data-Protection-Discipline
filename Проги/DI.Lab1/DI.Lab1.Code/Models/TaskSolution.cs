@@ -8,15 +8,8 @@ namespace DI.Lab1.Code.Models
 {
     public class TaskSolution
     {
-        public IEnumerable<double> SolutionSelection { get; }
+        public ICollection<double> SolutionSelection { get; set; } = new List<double>();
 
-
-        public double Solution { get; }
-
-        public TaskSolution(IEnumerable<double> solutionSelection, double solution)
-        {
-            SolutionSelection = solutionSelection;
-            Solution = solution;
-        }
+        public double Solution { get; set; }
     }
 }
