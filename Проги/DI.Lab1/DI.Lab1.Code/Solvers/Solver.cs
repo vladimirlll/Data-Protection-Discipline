@@ -21,7 +21,7 @@ namespace DI.Lab1.Code.Solvers
             double infSysSecondWindowDist = MathSolver.TwoDDistance(_data.Plan.XsecondWindow, _data.Plan.Ywindow, 
                                                                     _data.Plan.XInfSys, _data.Plan.YInfSys);
 
-            for(double x = 0; x <= _data.Plan.Xfence; x+= step)
+            for(double x = 0; x < _data.Plan.Xfence; x+= step)
             {
 
                 double fenceFirstWindowDist = MathSolver.TwoDDistance(x, _data.Plan.Yfence, 
