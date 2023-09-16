@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "HoR6a6+2lzMeYuZCxUv64nNeG6cujFVUgcC/VBuS/UPjaMXdQvjCCpNsYgTgH1qzcaDKutwi95hsN0jo/APj8g==",
+  "success": true,
+  "projectFilePath": "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5.Client\\DI.Lab5.Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\spect\\.nuget\\packages\\autofac\\7.1.0\\autofac.7.1.0.nupkg.sha512",
+    "C:\\Users\\spect\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,6 +1,4 @@
-﻿using DI.Lab5.Base.Models;
-
-namespace DI.Lab5.Base
+﻿namespace DI.Lab5.Base
 {
     public interface IPermutationEncoder
     {
