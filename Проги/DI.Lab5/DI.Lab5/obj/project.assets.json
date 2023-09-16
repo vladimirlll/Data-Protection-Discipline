@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "DI.Lab5.Base/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/DI.Lab5.Base.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DI.Lab5.Base.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "DI.Lab5.Base/1.0.0": {
+      "type": "project",
+      "path": "../DI.Lab5.Base/DI.Lab5.Base.csproj",
+      "msbuildProject": "../DI.Lab5.Base/DI.Lab5.Base.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "DI.Lab5.Base >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\spect\\.nuget\\packages\\": {},
@@ -14,9 +33,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5\\DI.Lab5.csproj",
-      "projectName": "DI.Lab5",
-      "projectPath": "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5\\DI.Lab5.csproj",
+      "projectUniqueName": "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5\\DI.Lab5.Realization.csproj",
+      "projectName": "DI.Lab5.Realization",
+      "projectPath": "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5\\DI.Lab5.Realization.csproj",
       "packagesPath": "C:\\Users\\spect\\.nuget\\packages\\",
       "outputPath": "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5\\obj\\",
       "projectStyle": "PackageReference",
@@ -38,7 +57,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5.Base\\DI.Lab5.Base.csproj": {
+              "projectPath": "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5.Base\\DI.Lab5.Base.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
