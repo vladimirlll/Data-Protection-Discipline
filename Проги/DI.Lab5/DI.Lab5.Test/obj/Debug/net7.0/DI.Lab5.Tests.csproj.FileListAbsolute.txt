@@ -1,8 +1,5 @@
 D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Test\bin\Debug\net7.0\CoverletSourceRootsMapping
 D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Test\bin\Debug\net7.0\testhost.dll
-D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Test\bin\Debug\net7.0\DI.Lab5.Realization.deps.json
-D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Test\bin\Debug\net7.0\DI.Lab5.Realization.runtimeconfig.json
-D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Test\bin\Debug\net7.0\DI.Lab5.Realization.exe
 D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Test\bin\Debug\net7.0\testhost.exe
 D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Test\bin\Debug\net7.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Test\bin\Debug\net7.0\xunit.runner.reporters.netcoreapp10.dll

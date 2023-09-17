@@ -6,7 +6,7 @@ namespace DI.Lab5.Realization.Encoders
     /// <summary>
     /// Шифратор, основанный на подстановках
     /// </summary>
-    public sealed class SubstitutionEncoder : IPermutationEncoder
+    public sealed class SubstitutionEncoder : IEncoder
     {
         /// <summary>
         /// Подстановка. Представляет собой номера мест шифрованного

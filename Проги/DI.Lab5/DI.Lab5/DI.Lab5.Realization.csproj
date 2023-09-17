@@ -11,8 +11,4 @@
     <ProjectReference Include="..\DI.Lab5.Base\DI.Lab5.Base.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Exceptions\" />
-  </ItemGroup>
-
 </Project>
