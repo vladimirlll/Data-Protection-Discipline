@@ -13,15 +13,22 @@ var container = builder.Build();
 
 using(var scope = container.BeginLifetimeScope())
 {
-    var permutationKeeper = container.Resolve<PermutationKeeper>();
+    try
+    {
+        var permutationKeeper = container.Resolve<PermutationKeeper>();
 
-    Console.Write("Введите исходное сообщение: ");
-    var msg = Console.ReadLine();
-    Console.WriteLine("\nВведите подстановку для заданного сообщения");
-    var permutation = Console.ReadLine();
-    permutationKeeper.SetPermutationFromString(permutation!);
+        Console.Write("Введите исходное сообщение: ");
+        var msg = Console.ReadLine();
+        Console.WriteLine("\nВведите подстановку для заданного сообщения");
+        var permutation = Console.ReadLine();
+        permutationKeeper.SetPermutationFromString(permutation!);
 
-    Console.WriteLine("\n\n\nИсходное сообщение: " + msg);
-    var encoder = container.Resolve<IEncoder>();
-    Console.WriteLine($"Закодированное сообщение: {encoder.Encode(msg)}");
+        Console.WriteLine("\n\n\nИсходное сообщение: " + msg);
+        var encoder = container.Resolve<IEncoder>();
+        Console.WriteLine($"Закодированное сообщение: {encoder.Encode(msg)}");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex);
+    }
 }
