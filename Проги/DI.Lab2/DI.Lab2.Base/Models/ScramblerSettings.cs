@@ -44,6 +44,12 @@ namespace DI.Lab2.Base.Models
         /// на который будет делиться каждый большой интервал
         /// </summary>
         public double t { get; private set; }
+        /// <summary>
+        /// Ключ криптографического преобразования.
+        /// Новые места отрезков, на которые должны перейти
+        /// исходные отрезки
+        /// </summary>
+        public IEnumerable<int> Key { get; private set; }
 
         private ScramblerSettings() { }
 
@@ -53,6 +59,7 @@ namespace DI.Lab2.Base.Models
         public class Builder
         {
             private bool _isTSet = false;
+            private bool _istSet = false;
             private ScramblerSettings _result = new ScramblerSettings()
             {
                 A = 1,
@@ -61,7 +68,9 @@ namespace DI.Lab2.Base.Models
                 Alpha = 1,
                 Beta = 1,
                 Gamma = 1,
-                T = 1
+                T = 2,
+                t = 0.33,
+                k = new List<int> { 5, 3, 1, 4, 2, 0}
             };
 
             public Builder SetA(double a)
@@ -130,10 +139,26 @@ namespace DI.Lab2.Base.Models
                     && n >= Constants.M && n <= 10 * Constants.M)
                 {
                     _result.t = t;
+                    _istSet = true;
                     return this;
                 }
                 else throw new TDividetIsNotSatisfiedException(
                     _result.T, t);
+            }
+
+            public Builder SetKey(IEnumerable<int> key)
+            {
+                if (_istSet && _isTSet)
+                {
+                    if(key.Count() == 
+                        double.Truncate(
+                            _result.T / _result.t))
+                    {
+                        _result.Key = key;
+                    }
+                }
+
+                return this;
             }
 
             public ScramblerSettings Build() => _result;

@@ -4,7 +4,7 @@
         : DataInputException
     {
         public NonPositiveMessageDurationException(
-            int duration) : base("Длительность сообщения = " +
+            double duration) : base("Длительность сообщения = " +
                 $"{duration} <= 0")
         { }
     }
