@@ -1,5 +1,6 @@
 ﻿using DI.Lab2.Base.Exceptions;
 using DI.Lab2.Base.Models;
+using DI.Lab2.Base.Utils;
 
 namespace DI.Lab2.Base.Algorithms
 {
@@ -46,6 +47,20 @@ namespace DI.Lab2.Base.Algorithms
             return result;
         }
 
+        private bool IsEndPoint(double time)
+        {
+            // Если это конечная точка в большом сегменте,
+            // то она делится само собой
+            // на длительность малого интервала
+            // и на длительность большого интервала нацело
+            // и это не начало времени - 0
+            var div = time / Settings.T;
+            if (Math.Abs(div - Math.Truncate(div)) < 
+                Constants.EPSILON && time > Constants.EPSILON)
+                return true;
+            return false;
+        }
+
         public override double OutputSignalValueAt(double time)
         {
             if (!CheckTimeMomentSatisfaction(time))
@@ -58,6 +73,11 @@ namespace DI.Lab2.Base.Algorithms
 
             var curveOldSmallSegmentInLineNum = int.Parse(
                     Math.Floor(time / Settings.t).ToString());
+            if (IsEndPoint(time))
+            {
+                curveOldSmallSegmentInLineNum -= 1;
+                curveBigSegmentInLineNum -= 1;
+            }
             var curveOldSmallSegmentInBigSegmentNum = 
                     curveOldSmallSegmentInLineNum %
                     int.Parse((Settings.T / Settings.t).ToString());

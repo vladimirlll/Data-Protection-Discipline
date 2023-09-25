@@ -163,7 +163,7 @@ namespace DI.Lab2.Tests
 
             // Act
             var inSignal = scrambler.InputSignalValueAt(0.5);
-            var outSignal = scrambler.OutputSignalValueAt(0.99999999);
+            var outSignal = scrambler.OutputSignalValueAt(1);
 
             // Assert
             inSignal.Should().BeApproximately(outSignal,
