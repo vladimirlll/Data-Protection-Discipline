@@ -47,9 +47,9 @@ namespace DI.Lab2.Base.Algorithms
             return result;
         }
 
-        private bool IsEndPoint(double time)
+        private bool IsBorderPoint(double time)
         {
-            // Если это конечная точка в большом сегменте,
+            // Если это пограничная точка в большом сегменте,
             // то она делится само собой
             // на длительность малого интервала
             // и на длительность большого интервала нацело
@@ -61,38 +61,26 @@ namespace DI.Lab2.Base.Algorithms
             return false;
         }
 
-        public override double OutputSignalValueAt(double time)
+        private double OutputSignalValue(
+            int bigSegmentNum,
+            int oldSmallSegmentInLineNum,
+            double time)
         {
-            if (!CheckTimeMomentSatisfaction(time))
-                throw new ArgumentOutOfRangeException("Момент времени " +
-                    "выходит за пределы допустимых значений");
-
-            var curveBigSegmentInLineNum = int.Parse(
-                    Math.Floor(time / Settings.T)
-                    .ToString());
-
-            var curveOldSmallSegmentInLineNum = int.Parse(
-                    Math.Floor(time / Settings.t).ToString());
-            if (IsEndPoint(time))
-            {
-                curveOldSmallSegmentInLineNum -= 1;
-                curveBigSegmentInLineNum -= 1;
-            }
-            var curveOldSmallSegmentInBigSegmentNum = 
-                    curveOldSmallSegmentInLineNum %
+            var oldSmallSegmentInBigSegmentNum =
+                    oldSmallSegmentInLineNum %
                     int.Parse((Settings.T / Settings.t).ToString());
 
             var newCurveSmallSegmentInBigSegmentNum = Settings.Key
                 .ToList()
-                .IndexOf(curveOldSmallSegmentInBigSegmentNum);
+                .IndexOf(oldSmallSegmentInBigSegmentNum);
 
             var newCurveSmallSegmentInLineNum =
-                curveBigSegmentInLineNum * 
+                bigSegmentNum *
                 (Settings.T / Settings.t) +
                 newCurveSmallSegmentInBigSegmentNum;
 
-            var startOldSmallSegmentTime = 
-                curveOldSmallSegmentInLineNum * Settings.t;
+            var startOldSmallSegmentTime =
+                oldSmallSegmentInLineNum * Settings.t;
             var diff = time - startOldSmallSegmentTime;
 
             var newTime = newCurveSmallSegmentInLineNum
@@ -102,6 +90,35 @@ namespace DI.Lab2.Base.Algorithms
 
 
             return y;
+        }
+
+        public override IEnumerable<double> OutputSignalValueAt(
+            double time)
+        {
+            if (!CheckTimeMomentSatisfaction(time))
+                throw new ArgumentOutOfRangeException("Момент времени " +
+                    "выходит за пределы допустимых значений");
+
+            List<double> results = new List<double>();
+
+            var bigSegmentNum = int.Parse(
+                    Math.Floor(time / Settings.T)
+                    .ToString());
+
+            var smallSegmentInLineNum = int.Parse(
+                    Math.Floor(time / Settings.t).ToString());
+            results.Add(OutputSignalValue(bigSegmentNum,
+                smallSegmentInLineNum, time));
+
+            if (IsBorderPoint(time))
+            {
+                bigSegmentNum -= 1;
+                smallSegmentInLineNum -= 1;
+                results.Add(OutputSignalValue(bigSegmentNum,
+                    smallSegmentInLineNum, time));
+            }
+
+            return results;
         }
     }
 }

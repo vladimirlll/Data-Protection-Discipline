@@ -118,8 +118,10 @@ namespace DI.Lab2.Tests
             // Assert
             // X(0) = 1 * sin(0) + 1 * cos(0) + 0 = 1
             // 0 - 0.5 -> 0.5 - 1; 0.5 - 1 -> 0 - 0.5
-            outSignal.Should().BeApproximately(1, 
-                Constants.EPSILON);
+            outSignal.Should().HaveCount(1);
+            outSignal.ElementAt(0)
+                .Should()
+                .BeApproximately(1, Constants.EPSILON);
         }
 
         [Fact]
@@ -134,7 +136,8 @@ namespace DI.Lab2.Tests
             var outSignal = scrambler.OutputSignalValueAt(0);
 
             // Assert
-            inSignal.Should().BeApproximately(outSignal, 
+            outSignal.Should().HaveCount(1);
+            inSignal.Should().BeApproximately(outSignal.ElementAt(0), 
                 Constants.EPSILON);
         }
 
@@ -150,7 +153,8 @@ namespace DI.Lab2.Tests
             var outSignal = scrambler.OutputSignalValueAt(0.75);
 
             // Assert
-            inSignal.Should().BeApproximately(outSignal,
+            outSignal.Should().HaveCount(1);
+            inSignal.Should().BeApproximately(outSignal.ElementAt(0),
                 Constants.EPSILON);
         }
 
@@ -166,7 +170,8 @@ namespace DI.Lab2.Tests
             var outSignal = scrambler.OutputSignalValueAt(1);
 
             // Assert
-            inSignal.Should().BeApproximately(outSignal,
+            outSignal.Should().HaveCount(2);
+            inSignal.Should().BeApproximately(outSignal.ElementAt(1),
                 Constants.EPSILON);
         }
     }

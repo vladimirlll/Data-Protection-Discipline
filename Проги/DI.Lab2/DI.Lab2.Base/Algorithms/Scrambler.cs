@@ -9,6 +9,7 @@ namespace DI.Lab2.Base.Algorithms
             Settings = settings;
 
         public abstract double InputSignalValueAt(double time);
-        public abstract double OutputSignalValueAt(double time);
+        public abstract IEnumerable<double> OutputSignalValueAt(
+            double time);
     }
 }
