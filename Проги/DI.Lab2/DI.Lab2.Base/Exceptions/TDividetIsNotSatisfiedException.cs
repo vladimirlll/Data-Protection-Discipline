@@ -6,7 +6,7 @@
     /// по делению
     /// </summary>
     public class TDividetIsNotSatisfiedException
-        : DataInputException
+        : ScramblerSettingException
     {
         /// <summary>
         /// 

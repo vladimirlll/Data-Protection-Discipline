@@ -180,5 +180,6 @@ namespace DI.Lab2.Tests
             // Assert
             genEx.Should().NotThrow<TDividetIsNotSatisfiedException>();
         }
+
     }
 }

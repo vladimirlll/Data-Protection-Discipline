@@ -1,7 +1,7 @@
 ﻿namespace DI.Lab2.Base.Exceptions
 {
     public class NonPositiveMessageDurationException
-        : DataInputException
+        : ScramblerSettingException
     {
         public NonPositiveMessageDurationException(
             double duration) : base("Длительность сообщения = " +

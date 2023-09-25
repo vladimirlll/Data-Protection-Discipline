@@ -4,7 +4,7 @@
     /// Исключение, если длительность большого интервала 
     /// меньше длительности меньшего интервала
     /// </summary>
-    public class TIsSmallertException : DataInputException
+    public class TIsSmallertException : ScramblerSettingException
     {
         public TIsSmallertException()
             :base("Длительность большого временного интервала " +

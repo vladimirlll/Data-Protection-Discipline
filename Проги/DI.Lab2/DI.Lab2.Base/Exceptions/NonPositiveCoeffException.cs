@@ -1,6 +1,6 @@
 ﻿namespace DI.Lab2.Base.Exceptions
 {
-    public class NonPositiveCoeffException : DataInputException
+    public class NonPositiveCoeffException : ScramblerSettingException
     {
         public NonPositiveCoeffException(
             double value, 

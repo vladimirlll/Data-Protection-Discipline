@@ -23,7 +23,7 @@ namespace DI.Lab2.Tests
                 .SetGamma(1)
                 .SetT(1)
                 .Sett(0.5)
-                .SetKey(new List<int> { 2, 1})
+                .SetKey(new List<int> { 1, 0})
                 .Build();
         }
 
@@ -61,8 +61,113 @@ namespace DI.Lab2.Tests
             var inSignal = scrambler.InputSignalValueAt(0);
 
             // Assert
-            // X(t) = 1 * sin(0) + 1 * cos(0) + 0 = 1
+            // X(0) = 1 * sin(0) + 1 * cos(0) + 0 = 1
             inSignal.Should().BeApproximately(1, Constants.EPSILON);
+        }
+
+        [Theory]
+        [InlineData(-1)]
+        [InlineData(-0.000001)]
+        [InlineData(11)]
+        [InlineData(10.0000001)]
+        public void PhoneMessageScrambler_InputSignalAt_WithIncorrectTime_ThrowsException(
+            double time)
+        {
+            // Arrange
+            Scrambler scrambler = new
+                PhoneMessageScrambler(settings, 10);
+
+            // Act
+            Action genEx = () => 
+                scrambler.InputSignalValueAt(time);
+
+            // Assert
+            genEx.Should().Throw<ArgumentOutOfRangeException>();
+        }
+
+        [Theory]
+        [InlineData(-1)]
+        [InlineData(-0.000001)]
+        [InlineData(11)]
+        [InlineData(10.0000001)]
+        public void PhoneMessageScrambler_OutputSignalAt_WithIncorrectTime_ThrowsException(
+            double time)
+        {
+            // Arrange
+            Scrambler scrambler = new
+                PhoneMessageScrambler(settings, 10);
+
+            // Act
+            Action genEx = () =>
+                scrambler.OutputSignalValueAt(time);
+
+            // Assert
+            genEx.Should().Throw<ArgumentOutOfRangeException>();
+        }
+
+        [Fact]
+        public void PhoneMessageScrambler_OutputSignalAt_ReturnsCorrectValue()
+        {
+            // Arrange
+            Scrambler scrambler = new
+                PhoneMessageScrambler(settings, 2);
+
+            // Act
+            var outSignal = scrambler.OutputSignalValueAt(0.5);
+
+            // Assert
+            // X(0) = 1 * sin(0) + 1 * cos(0) + 0 = 1
+            // 0 - 0.5 -> 0.5 - 1; 0.5 - 1 -> 0 - 0.5
+            outSignal.Should().BeApproximately(1, 
+                Constants.EPSILON);
+        }
+
+        [Fact]
+        public void PhoneMessageScrambler_OutputSignalAt_StartPointsOfSmallSegments_ReturnsTheSameLikeInputSignalAtNewPos()
+        {
+            // Arrange 
+            Scrambler scrambler = new
+                PhoneMessageScrambler(settings, 2);
+
+            // Act
+            var inSignal = scrambler.InputSignalValueAt(0.5);
+            var outSignal = scrambler.OutputSignalValueAt(0);
+
+            // Assert
+            inSignal.Should().BeApproximately(outSignal, 
+                Constants.EPSILON);
+        }
+
+        [Fact]
+        public void PhoneMessageScrambler_OutputSignalAt_MidPointOfSmallSegments_ReturnsTheSameLikeInputSignalAtNewPos()
+        {
+            // Arrange 
+            Scrambler scrambler = new
+                PhoneMessageScrambler(settings, 2);
+
+            // Act
+            var inSignal = scrambler.InputSignalValueAt(0.25);
+            var outSignal = scrambler.OutputSignalValueAt(0.75);
+
+            // Assert
+            inSignal.Should().BeApproximately(outSignal,
+                Constants.EPSILON);
+        }
+
+        [Fact]
+        public void PhoneMessageScrambler_OutputSignalAt_EndPointOfSmallSegments_ReturnsTheSameLikeInputSignalAtNewPos()
+        {
+            // Arrange 
+            Scrambler scrambler = new
+                PhoneMessageScrambler(settings, 2);
+
+            // Act
+            var inSignal = scrambler.InputSignalValueAt(0.5);
+            var outSignal = scrambler.OutputSignalValueAt(0.99999999);
+
+            // Assert
+            inSignal.Should().BeApproximately(outSignal,
+                Constants.EPSILON);
         }
     }
 }

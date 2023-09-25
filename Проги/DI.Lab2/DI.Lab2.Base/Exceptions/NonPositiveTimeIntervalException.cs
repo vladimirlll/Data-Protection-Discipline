@@ -1,6 +1,6 @@
 ﻿namespace DI.Lab2.Base.Exceptions
 {
-    public class NonPositiveTimeIntervalException : DataInputException
+    public class NonPositiveTimeIntervalException : ScramblerSettingException
     {
         /// <summary>
         /// 

@@ -70,7 +70,7 @@ namespace DI.Lab2.Base.Models
                 Gamma = 1,
                 T = 2,
                 t = 0.33,
-                k = new List<int> { 5, 3, 1, 4, 2, 0}
+                Key = new List<int> { 5, 3, 1, 4, 2, 0}
             };
 
             public Builder SetA(double a)
@@ -161,7 +161,16 @@ namespace DI.Lab2.Base.Models
                 return this;
             }
 
-            public ScramblerSettings Build() => _result;
+            public ScramblerSettings Build()
+            {
+                // Снова установка, чтобы произовести все
+                // проверки снова, потому что пользователь
+                // может устанавливать все не по порядку
+                SetT(_result.T);
+                Sett(_result.t);
+                SetKey(_result.Key);
+                return _result;
+            }
         }
     }
 }
