@@ -46,14 +46,17 @@ namespace Лаба2Формы
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(49, 420);
+            this.button1.Location = new System.Drawing.Point(37, 433);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(348, 76);
+            this.button1.Size = new System.Drawing.Size(261, 62);
             this.button1.TabIndex = 0;
             this.button1.Text = "ВЫЧИСЛИТЬ";
             this.button1.UseVisualStyleBackColor = true;
@@ -61,60 +64,68 @@ namespace Лаба2Формы
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(106, 320);
+            this.textBox7.Location = new System.Drawing.Point(80, 260);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
+            this.textBox7.Size = new System.Drawing.Size(76, 20);
             this.textBox7.TabIndex = 38;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(106, 273);
+            this.textBox6.Location = new System.Drawing.Point(80, 222);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
+            this.textBox6.Size = new System.Drawing.Size(76, 20);
             this.textBox6.TabIndex = 37;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(106, 224);
+            this.textBox5.Location = new System.Drawing.Point(80, 182);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
+            this.textBox5.Size = new System.Drawing.Size(76, 20);
             this.textBox5.TabIndex = 36;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(106, 177);
+            this.textBox4.Location = new System.Drawing.Point(80, 144);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
+            this.textBox4.Size = new System.Drawing.Size(76, 20);
             this.textBox4.TabIndex = 35;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(106, 118);
+            this.textBox3.Location = new System.Drawing.Point(80, 96);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.Size = new System.Drawing.Size(76, 20);
             this.textBox3.TabIndex = 34;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(106, 72);
+            this.textBox2.Location = new System.Drawing.Point(80, 58);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.Size = new System.Drawing.Size(76, 20);
             this.textBox2.TabIndex = 33;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(297, 28);
+            this.textBox1.Location = new System.Drawing.Point(223, 23);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.Size = new System.Drawing.Size(76, 20);
             this.textBox1.TabIndex = 32;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(44, 22);
+            this.label7.Location = new System.Drawing.Point(33, 18);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(225, 29);
+            this.label7.Size = new System.Drawing.Size(170, 24);
             this.label7.TabIndex = 31;
             this.label7.Text = "Длина сообщения";
             // 
@@ -122,19 +133,21 @@ namespace Лаба2Формы
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(44, 367);
+            this.label8.Location = new System.Drawing.Point(33, 298);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(25, 29);
+            this.label8.Size = new System.Drawing.Size(27, 24);
             this.label8.TabIndex = 30;
-            this.label8.Text = "k";
+            this.label8.Text = "T:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(44, 217);
+            this.label4.Location = new System.Drawing.Point(33, 176);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 29);
+            this.label4.Size = new System.Drawing.Size(20, 24);
             this.label4.TabIndex = 29;
             this.label4.Text = "a";
             // 
@@ -142,9 +155,10 @@ namespace Лаба2Формы
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(44, 266);
+            this.label5.Location = new System.Drawing.Point(33, 216);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 29);
+            this.label5.Size = new System.Drawing.Size(21, 24);
             this.label5.TabIndex = 28;
             this.label5.Text = "в";
             // 
@@ -152,9 +166,10 @@ namespace Лаба2Формы
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(44, 313);
+            this.label6.Location = new System.Drawing.Point(33, 254);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 29);
+            this.label6.Size = new System.Drawing.Size(19, 24);
             this.label6.TabIndex = 27;
             this.label6.Text = "y";
             // 
@@ -162,9 +177,10 @@ namespace Лаба2Формы
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(44, 170);
+            this.label3.Location = new System.Drawing.Point(33, 138);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 29);
+            this.label3.Size = new System.Drawing.Size(23, 24);
             this.label3.TabIndex = 26;
             this.label3.Text = "C";
             // 
@@ -172,9 +188,10 @@ namespace Лаба2Формы
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(44, 118);
+            this.label2.Location = new System.Drawing.Point(33, 96);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 29);
+            this.label2.Size = new System.Drawing.Size(22, 24);
             this.label2.TabIndex = 25;
             this.label2.Text = "B";
             // 
@@ -182,9 +199,10 @@ namespace Лаба2Формы
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(44, 65);
+            this.label1.Location = new System.Drawing.Point(33, 53);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 29);
+            this.label1.Size = new System.Drawing.Size(23, 24);
             this.label1.TabIndex = 24;
             this.label1.Text = "A";
             // 
@@ -192,17 +210,41 @@ namespace Лаба2Формы
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(101, 367);
+            this.label9.Location = new System.Drawing.Point(76, 298);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(26, 29);
+            this.label9.Size = new System.Drawing.Size(20, 24);
             this.label9.TabIndex = 39;
-            this.label9.Text = "6";
+            this.label9.Text = "1";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(33, 336);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(359, 48);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Размер ключ\r\nкриптографического преобразования:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(396, 360);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(20, 24);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "6";
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 496);
+            this.ClientSize = new System.Drawing.Size(676, 506);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
@@ -212,6 +254,7 @@ namespace Лаба2Формы
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -220,6 +263,7 @@ namespace Лаба2Формы
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.ResumeLayout(false);
@@ -246,5 +290,7 @@ namespace Лаба2Формы
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

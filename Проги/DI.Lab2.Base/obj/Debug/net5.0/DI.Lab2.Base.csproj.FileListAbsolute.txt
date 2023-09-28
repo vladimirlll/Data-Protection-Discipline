@@ -1,0 +1,5 @@
+D:\4_course\Защита информации\Проги\DI.Lab2\DI.Lab2.Base\obj\Debug\net5.0\DI.Lab2.Base.csproj.AssemblyReference.cache
+D:\4_course\Защита информации\Проги\DI.Lab2\DI.Lab2.Base\obj\Debug\net5.0\DI.Lab2.Base.GeneratedMSBuildEditorConfig.editorconfig
+D:\4_course\Защита информации\Проги\DI.Lab2\DI.Lab2.Base\obj\Debug\net5.0\DI.Lab2.Base.AssemblyInfoInputs.cache
+D:\4_course\Защита информации\Проги\DI.Lab2\DI.Lab2.Base\obj\Debug\net5.0\DI.Lab2.Base.AssemblyInfo.cs
+D:\4_course\Защита информации\Проги\DI.Lab2\DI.Lab2.Base\obj\Debug\net5.0\DI.Lab2.Base.csproj.CoreCompileInputs.cache

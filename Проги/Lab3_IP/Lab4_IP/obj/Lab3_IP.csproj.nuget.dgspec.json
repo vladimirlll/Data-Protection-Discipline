@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gorst\\source\\repos\\FourCourse\\Information Protection\\Lab3_IP\\Lab4_IP\\Lab3_IP.csproj": {}
+    "D:\\4_course\\Защита информации\\Проги\\Lab3_IP\\Lab4_IP\\Lab3_IP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gorst\\source\\repos\\FourCourse\\Information Protection\\Lab3_IP\\Lab4_IP\\Lab3_IP.csproj": {
+    "D:\\4_course\\Защита информации\\Проги\\Lab3_IP\\Lab4_IP\\Lab3_IP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gorst\\source\\repos\\FourCourse\\Information Protection\\Lab3_IP\\Lab4_IP\\Lab3_IP.csproj",
+        "projectUniqueName": "D:\\4_course\\Защита информации\\Проги\\Lab3_IP\\Lab4_IP\\Lab3_IP.csproj",
         "projectName": "Lab3_IP",
-        "projectPath": "C:\\Users\\gorst\\source\\repos\\FourCourse\\Information Protection\\Lab3_IP\\Lab4_IP\\Lab3_IP.csproj",
-        "packagesPath": "C:\\Users\\gorst\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gorst\\source\\repos\\FourCourse\\Information Protection\\Lab3_IP\\Lab4_IP\\obj\\",
+        "projectPath": "D:\\4_course\\Защита информации\\Проги\\Lab3_IP\\Lab4_IP\\Lab3_IP.csproj",
+        "packagesPath": "C:\\Users\\spect\\.nuget\\packages\\",
+        "outputPath": "D:\\4_course\\Защита информации\\Проги\\Lab3_IP\\Lab4_IP\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Programs\\Microsoft\\Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\gorst\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\spect\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +62,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.111\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

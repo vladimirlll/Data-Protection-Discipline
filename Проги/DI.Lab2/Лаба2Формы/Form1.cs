@@ -78,6 +78,7 @@ namespace Лаба2Формы
             //набор точек.
             Series mySeriesOfPoint = new Series("Sinus");
             mySeriesOfPoint.ChartType = SeriesChartType.Line;
+            mySeriesOfPoint.BorderWidth = 3;
             mySeriesOfPoint.ChartArea = "Line Chart";
             mySeriesOfPoint.Color = Color.Red;
             mySeriesOfPoint.Points.AddXY(0, data[0].secondPoint);
