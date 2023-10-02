@@ -29,9 +29,9 @@ namespace DI.Lab3.Code.Repository
         public List<List<int>> GetAccessRights() => _data.AccessRights;
 
         // Добавление пользователя
-        public void AddUser(string? username, int privilege)
+        public void AddUser(string? username)
         {
-            if (!string.IsNullOrEmpty(username) && privilege >= 0 && privilege <= 3)
+            if (!string.IsNullOrEmpty(username))
             {
                 // Добавляем пользователя и привилегии для него
                 _data.Users.Add(username);
@@ -54,9 +54,9 @@ namespace DI.Lab3.Code.Repository
         }
 
         // Добавление объекта
-        public void AddObject(string? objectname, int privilege)
+        public void AddObject(string? objectname)
         {
-            if (!string.IsNullOrEmpty(objectname) && privilege >= 0 && privilege <= 3)
+            if (!string.IsNullOrEmpty(objectname))
             {
                 // Добавляем объект и привилегии для него
                 _data.Objects.Add(objectname);

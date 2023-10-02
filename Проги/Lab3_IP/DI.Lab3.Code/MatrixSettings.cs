@@ -25,14 +25,6 @@ namespace DI.Lab3.Code
         // Загружаем в комбобоксы исходные данные
         private void MatrixSettings_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i <= 3; i++)
-            {
-                comboBoxUserPrivilege.Items.Add(i);
-                comboBoxObjectPrivilege.Items.Add(i);
-            }
-            comboBoxUserPrivilege.SelectedIndex = 0;
-            comboBoxObjectPrivilege.SelectedIndex = 0;
-
             // Вызываю события, при котором обновляются данные на всех формах
             ListUsersChanged?.Invoke(this, EventArgs.Empty);        // списки пользователей
             ListObjectsChanged?.Invoke(this, EventArgs.Empty);      // списки объектов
@@ -42,11 +34,10 @@ namespace DI.Lab3.Code
         private void buttonAddUser_Click(object sender, EventArgs e)
         {
             var username = textBoxUserName.Text.Trim();
-            var privilege = comboBoxUserPrivilege.SelectedIndex;
 
             try
             {
-                _repository.AddUser(username, privilege);
+                _repository.AddUser(username);
                 ListUsersChanged?.Invoke(this, EventArgs.Empty);    // Вызываю событие, при котором обновляются данные на всех формах
             }
             catch
@@ -59,11 +50,10 @@ namespace DI.Lab3.Code
         private void buttonAddObject_Click(object sender, EventArgs e)
         {
             var objectname = textBoxObjectName.Text.Trim();
-            var privilege = comboBoxObjectPrivilege.SelectedIndex;
 
             try
             {
-                _repository.AddObject(objectname, privilege);
+                _repository.AddObject(objectname);
                 ListObjectsChanged?.Invoke(this, EventArgs.Empty);
             }
             catch

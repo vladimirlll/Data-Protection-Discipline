@@ -49,17 +49,13 @@
             comboBoxUsers = new ComboBox();
             groupBox1 = new GroupBox();
             groupBox3 = new GroupBox();
-            label5 = new Label();
             textBoxObjectName = new TextBox();
             buttonAddObject = new Button();
-            comboBoxObjectPrivilege = new ComboBox();
             label4 = new Label();
             groupBox2 = new GroupBox();
             textBoxUserName = new TextBox();
             label3 = new Label();
             buttonAddUser = new Button();
-            label2 = new Label();
-            comboBoxUserPrivilege = new ComboBox();
             label1 = new Label();
             groupBox7.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -294,10 +290,8 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(label5);
             groupBox3.Controls.Add(textBoxObjectName);
             groupBox3.Controls.Add(buttonAddObject);
-            groupBox3.Controls.Add(comboBoxObjectPrivilege);
             groupBox3.Controls.Add(label4);
             groupBox3.Location = new Point(357, 21);
             groupBox3.Margin = new Padding(3, 2, 3, 2);
@@ -307,15 +301,6 @@
             groupBox3.TabIndex = 3;
             groupBox3.TabStop = false;
             groupBox3.Text = "Добавление объектов";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(5, 67);
-            label5.Name = "label5";
-            label5.Size = new Size(121, 15);
-            label5.TabIndex = 4;
-            label5.Text = "Привилегия объекта";
             // 
             // textBoxObjectName
             // 
@@ -336,15 +321,6 @@
             buttonAddObject.UseVisualStyleBackColor = true;
             buttonAddObject.Click += buttonAddObject_Click;
             // 
-            // comboBoxObjectPrivilege
-            // 
-            comboBoxObjectPrivilege.FormattingEnabled = true;
-            comboBoxObjectPrivilege.Location = new Point(5, 86);
-            comboBoxObjectPrivilege.Margin = new Padding(3, 2, 3, 2);
-            comboBoxObjectPrivilege.Name = "comboBoxObjectPrivilege";
-            comboBoxObjectPrivilege.Size = new Size(305, 23);
-            comboBoxObjectPrivilege.TabIndex = 1;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -359,8 +335,6 @@
             groupBox2.Controls.Add(textBoxUserName);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(buttonAddUser);
-            groupBox2.Controls.Add(label2);
-            groupBox2.Controls.Add(comboBoxUserPrivilege);
             groupBox2.Location = new Point(12, 21);
             groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
@@ -397,24 +371,6 @@
             buttonAddUser.Text = "Добавить пользователя";
             buttonAddUser.UseVisualStyleBackColor = true;
             buttonAddUser.Click += buttonAddUser_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(5, 68);
-            label2.Name = "label2";
-            label2.Size = new Size(152, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Привилегия пользователя";
-            // 
-            // comboBoxUserPrivilege
-            // 
-            comboBoxUserPrivilege.FormattingEnabled = true;
-            comboBoxUserPrivilege.Location = new Point(5, 86);
-            comboBoxUserPrivilege.Margin = new Padding(3, 2, 3, 2);
-            comboBoxUserPrivilege.Name = "comboBoxUserPrivilege";
-            comboBoxUserPrivilege.Size = new Size(330, 23);
-            comboBoxUserPrivilege.TabIndex = 0;
             // 
             // label1
             // 
@@ -474,17 +430,13 @@
         private ComboBox comboBoxUsers;
         private GroupBox groupBox1;
         private GroupBox groupBox3;
-        private Label label5;
         private TextBox textBoxObjectName;
         private Button buttonAddObject;
-        private ComboBox comboBoxObjectPrivilege;
         private Label label4;
         private GroupBox groupBox2;
         private TextBox textBoxUserName;
         private Label label3;
         private Button buttonAddUser;
-        private Label label2;
-        private ComboBox comboBoxUserPrivilege;
         private Label label1;
     }
 }
