@@ -70,12 +70,12 @@ namespace Lab4_IP
                 // то мы его можем читать и даже редактировать, но копировать не можем (???). Поэтому более логичным тут будет >=
                 // (если привилегии одинаковые и мы имеем доступ к объекту, то мы его можем читать или менять и также КОПИРОВАТЬ). В противном случае,
                 // скопировать мы не можем, но изменять можем. По-моему, это бред и тут ошибка, поэтому сделал >=
-                buttonCopy.Enabled = _data.PrivilegesUser[indexUser] >= _data.PrivilegesObject[indexObject];
+                buttonCopy.Enabled = _data.PrivilegesUser[indexUser] > _data.PrivilegesObject[indexObject];
 
                 // Тут тоже ситуация непонятна. Мы можем скопировать объект, но вставить назад, откуда скопировали, мы не можем (???)
                 // Поэтому тут тоже добавил знак равенства для привилегий. По логике, если мы взяли объект определенной привилегии, то мы
                 // можем вставить этот объект в другой объект такой же привилегии или в тот же самый объект
-                buttonPaste.Enabled = _privilegeBuffer <= _data.PrivilegesObject[indexObject];
+                buttonPaste.Enabled = (_privilegeBuffer < _data.PrivilegesObject[indexObject] && _privilegeBuffer != -1);
 
                 // P.S также в методичке написано: если PrivilegesUser[I] < PrivilegesObject[J], то доступа к объекту у пользователя нет
                 // ==> если привилегии равны, то доступ есть. Это также подтверждает, что то, что я понаписал сверху, так и есть
@@ -120,6 +120,7 @@ namespace Lab4_IP
             // События, связанные с заполнением объектов к комбобоксы и т.п.
             formSettings.ListObjectsChanged += HandleListObjectsChanged!;
             formSettings.ListObjectsChanged += formSettings.HandleListObjectsChanged!;
+            ListObjectsChanged += formSettings.HandleListObjectsChanged!;
 
             formSettings.Show();
         }

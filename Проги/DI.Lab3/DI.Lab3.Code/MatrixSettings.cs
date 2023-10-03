@@ -97,53 +97,6 @@ namespace DI.Lab3.Code
             }
         }
 
-        // При изменении значения в combobox для пользователей в разделе "Матрица прав доступа"
-        private void comboBoxMatrixUsers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Устанавливаем права пользователя по ред-ю матрицы в textbox
-            var username = comboBoxMatrixUsers.SelectedItem?.ToString();
-            textBoxUserRights.Text = _repository.UserRightsToEditMatrix(username).ToString();
-
-            // Делаем видимыми текстбоксы и лэйблы
-            label9.Visible = true;
-            textBoxUserRights.Visible = true;
-            label10.Visible = true;
-            comboBoxMatrixObjects.Visible = true;
-        }
-
-        // При изменении значения в combobox для объектов в разделе "Матрица прав доступа"
-        private void comboBoxMatrixObjects_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Устанавливаем права пользователя к объекту в textbox
-            var username = comboBoxMatrixUsers.SelectedItem?.ToString();
-            var objectname = comboBoxMatrixObjects.SelectedItem?.ToString();
-            textBoxRightsUserToObject.Text = _repository.UserRightsToObject(username, objectname).ToString();
-
-            // Делаем видимыми текстбоксы и лэйблы
-            label11.Visible = true;
-            textBoxRightsUserToObject.Visible = true;
-        }
-
-        // Кнопка "Редактировать" в разделе "Матрица прав доступа"
-        private void buttonEditSettings_Click(object sender, EventArgs e)
-        {
-            if (comboBoxMatrixUsers.SelectedIndex != -1)
-            {
-                // Редактируем права пользователя к редактированию матрицы
-                var username = comboBoxMatrixUsers.SelectedItem?.ToString();
-                var userRightEditMatrix = Convert.ToInt32(textBoxUserRights.Text.Trim());
-                _repository.SetUserRightsToMatrix(username, userRightEditMatrix);
-
-                if (comboBoxMatrixObjects.SelectedIndex != -1)
-                {
-                    // Редактируем права пользователя к объекту
-                    var objectname = comboBoxMatrixObjects.SelectedItem?.ToString();
-                    var userRightToObject = Convert.ToInt32(textBoxRightsUserToObject.Text.Trim());
-                    _repository.SetUserRightsToObject(username, objectname, userRightToObject);
-                }
-            }
-        }
-
         private void UpdateDataGrid()
         {
             dgvMatrix.Rows.Clear();
@@ -181,11 +134,9 @@ namespace DI.Lab3.Code
         public void HandleListUsersChanged(object sender, EventArgs e)
         {
             comboBoxUsers.Items.Clear();
-            comboBoxMatrixUsers.Items.Clear();
             foreach (var user in _repository.GetUsers())
             {
                 comboBoxUsers.Items.Add(user);
-                comboBoxMatrixUsers.Items.Add(user);
             }
             UpdateDataGrid();
         }
@@ -194,11 +145,9 @@ namespace DI.Lab3.Code
         public void HandleListObjectsChanged(object sender, EventArgs e)
         {
             comboBoxObjects.Items.Clear();
-            comboBoxMatrixObjects.Items.Clear();
             foreach (var obj in _repository.GetObjects())
             {
                 comboBoxObjects.Items.Add(obj);
-                comboBoxMatrixObjects.Items.Add(obj);
             }
             UpdateDataGrid();
         }

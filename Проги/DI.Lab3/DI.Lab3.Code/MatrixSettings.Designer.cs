@@ -81,7 +81,6 @@
             buttonEditSettings.TabIndex = 8;
             buttonEditSettings.Text = "Редактировать";
             buttonEditSettings.UseVisualStyleBackColor = true;
-            buttonEditSettings.Click += buttonEditSettings_Click;
             // 
             // groupBox4
             // 

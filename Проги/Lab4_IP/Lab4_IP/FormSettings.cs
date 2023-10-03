@@ -52,7 +52,7 @@ namespace Lab4_IP
         {
             var username = textBoxUserName.Text.Trim();
             var privilege = comboBoxUserPrivilege.SelectedIndex;
-            
+
             try
             {
                 _data.AddUser(username, privilege);
@@ -109,7 +109,7 @@ namespace Lab4_IP
             }
             catch
             {
-                
+
             }
         }
 
@@ -118,11 +118,13 @@ namespace Lab4_IP
         {
             // Устанавливаем права пользователя по ред-ю матрицы в textbox
             var username = comboBoxMatrixUsers.SelectedItem?.ToString();
-            textBoxUserRights.Text = _data.UserRightsToEditMatrix(username).ToString();
-            
+            var userPriv = _data.PrivilegesUser[_data.Users.IndexOf(username)];
+            textBoxUserPriv.Text = userPriv.ToString();
+
+
             // Делаем видимыми текстбоксы и лэйблы
             label9.Visible = true;
-            textBoxUserRights.Visible = true;
+            textBoxUserPriv.Visible = true;
             label10.Visible = true;
             comboBoxMatrixObjects.Visible = true;
         }
@@ -133,11 +135,12 @@ namespace Lab4_IP
             // Устанавливаем права пользователя к объекту в textbox
             var username = comboBoxMatrixUsers.SelectedItem?.ToString();
             var objectname = comboBoxMatrixObjects.SelectedItem?.ToString();
-            textBoxRightsUserToObject.Text = _data.UserRightsToObject(username, objectname).ToString();
+            var objectPriv = _data.PrivilegesObject[_data.Objects.IndexOf(objectname)];
+            textBoxObjectPriv.Text = objectPriv.ToString();
 
             // Делаем видимыми текстбоксы и лэйблы
             label11.Visible = true;
-            textBoxRightsUserToObject.Visible = true;
+            textBoxObjectPriv.Visible = true;
         }
 
         // Кнопка "Редактировать" в разделе "Матрица прав доступа"
@@ -145,19 +148,52 @@ namespace Lab4_IP
         {
             if (comboBoxMatrixUsers.SelectedIndex != -1)
             {
-                // Редактируем права пользователя к редактированию матрицы
+                // Редактируем привилегии пользователя
                 var username = comboBoxMatrixUsers.SelectedItem?.ToString();
-                var userRightEditMatrix = Convert.ToInt32(textBoxUserRights.Text.Trim());
-                _data.SetUserRightsToMatrix(username, userRightEditMatrix);
+                var userPriv = Convert.ToInt32(textBoxUserPriv.Text.Trim());
+                _data.PrivilegesUser[_data.Users.IndexOf(username)] = userPriv;
 
                 if (comboBoxMatrixObjects.SelectedIndex != -1)
                 {
-                    // Редактируем права пользователя к объекту
+                    // Редактируем привилегии объекта
                     var objectname = comboBoxMatrixObjects.SelectedItem?.ToString();
-                    var userRightToObject = Convert.ToInt32(textBoxRightsUserToObject.Text.Trim());
-                    _data.SetUserRightsToObject(username, objectname, userRightToObject);
+                    var objectPriv = Convert.ToInt32(textBoxObjectPriv.Text.Trim());
+                    _data.PrivilegesObject[_data.Objects.IndexOf(objectname)] = objectPriv;
                 }
             }
+        }
+
+        private void UpdateDataGrid()
+        {
+            dgvMatrix.Rows.Clear();
+            dgvMatrix.Columns.Clear();
+            dgvMatrix.Columns.Add("matSet", "Редактирование матрицы");
+
+            foreach (var obj in _data.Objects)
+            {
+                dgvMatrix.Columns.Add(obj, obj);
+            }
+
+            var users = _data.Users;
+            for (int i = 0; i < users.Count; i++)
+            {
+                var index = dgvMatrix.Rows.Add();
+                dgvMatrix.Rows[i].HeaderCell.Value = users[i];
+
+            }
+
+            var matrix = _data.P;
+
+            for (int ui = 0; ui < matrix.Count; ui++)
+            {
+                for (int oi = 0; oi < matrix[ui].Count; oi++)
+                {
+                    dgvMatrix[oi, ui].Value = matrix[ui][oi].ToString();
+                }
+            }
+
+            dgvMatrix.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
+            dgvMatrix.AllowUserToAddRows = false;
         }
 
         // Метод для обработки изменения списков с пользователями
@@ -170,6 +206,7 @@ namespace Lab4_IP
                 comboBoxUsers.Items.Add(user);
                 comboBoxMatrixUsers.Items.Add(user);
             }
+            UpdateDataGrid();
         }
 
         // Метод для обработки изменения списков с объектами
@@ -181,6 +218,61 @@ namespace Lab4_IP
             {
                 comboBoxObjects.Items.Add(obj);
                 comboBoxMatrixObjects.Items.Add(obj);
+            }
+            UpdateDataGrid();
+        }
+
+        private void dgvMatrix_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            void GetBackOldValue()
+            {
+                dgvMatrix[e.ColumnIndex, e.RowIndex].Value =
+                        _data.P[e.RowIndex][e.ColumnIndex].ToString();
+            }
+
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                if (int.TryParse(dgvMatrix[e.ColumnIndex, e.RowIndex].Value.ToString(), out int newVal))
+                {
+                    if (e.ColumnIndex == 0)
+                    {
+                        if ((newVal < 0 || newVal > 1))
+                        {
+                            MessageBox.Show("В колонке редактирования матрицы значения должны быть 0 или 1");
+                            GetBackOldValue();
+                        }
+                        else
+                        {
+                            // Редактируем права пользователя к редактированию матрицы
+                            var username = dgvMatrix.Rows[e.RowIndex].HeaderCell.Value as string;
+                            var userRightEditMatrix = int.Parse(dgvMatrix[e.ColumnIndex, e.RowIndex].Value.ToString()!);
+                            _data.SetUserRightsToMatrix(username, userRightEditMatrix);
+                        }
+                    }
+                    else if (e.ColumnIndex > 0)
+                    {
+                        if (newVal < 0 || newVal > 2)
+                        {
+                            MessageBox.Show("В колонках матрицы значения должны быть >= 0 и <= 2");
+                            GetBackOldValue();
+                        }
+                        else
+                        {
+                            // Редактируем права пользователя к объекту
+                            var username = dgvMatrix.Rows[e.RowIndex].HeaderCell.Value as string;
+                            var objectname = dgvMatrix.Columns[e.ColumnIndex].HeaderText;
+                            var userRightToObject = int.Parse(dgvMatrix[e.ColumnIndex, e.RowIndex].Value.ToString()!);
+                            _data.SetUserRightsToObject(username, objectname, userRightToObject);
+                        }
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Значение элементов матрицы должно быть числом");
+                    GetBackOldValue();
+                }
+
             }
         }
     }

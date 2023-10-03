@@ -28,399 +28,436 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxObjectName = new System.Windows.Forms.TextBox();
-            this.buttonAddObject = new System.Windows.Forms.Button();
-            this.comboBoxObjectPrivilege = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBoxUserName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.buttonAddUser = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxUserPrivilege = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.comboBoxObjects = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.buttonDeleteObject = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.buttonDeleteUser = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBoxUsers = new System.Windows.Forms.ComboBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.buttonEditSettings = new System.Windows.Forms.Button();
-            this.textBoxRightsUserToObject = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBoxMatrixObjects = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBoxUserRights = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBoxMatrixUsers = new System.Windows.Forms.ComboBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            groupBox3 = new GroupBox();
+            label5 = new Label();
+            textBoxObjectName = new TextBox();
+            buttonAddObject = new Button();
+            comboBoxObjectPrivilege = new ComboBox();
+            label4 = new Label();
+            groupBox2 = new GroupBox();
+            textBoxUserName = new TextBox();
+            label3 = new Label();
+            buttonAddUser = new Button();
+            label2 = new Label();
+            comboBoxUserPrivilege = new ComboBox();
+            label1 = new Label();
+            groupBox4 = new GroupBox();
+            groupBox6 = new GroupBox();
+            comboBoxObjects = new ComboBox();
+            label7 = new Label();
+            buttonDeleteObject = new Button();
+            groupBox5 = new GroupBox();
+            buttonDeleteUser = new Button();
+            label6 = new Label();
+            comboBoxUsers = new ComboBox();
+            groupBox7 = new GroupBox();
+            dgvMatrix = new DataGridView();
+            buttonEditSettings = new Button();
+            textBoxObjectPriv = new TextBox();
+            label11 = new Label();
+            comboBoxMatrixObjects = new ComboBox();
+            label10 = new Label();
+            textBoxUserPriv = new TextBox();
+            label9 = new Label();
+            label8 = new Label();
+            comboBoxMatrixUsers = new ComboBox();
+            groupBox1.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox4.SuspendLayout();
+            groupBox6.SuspendLayout();
+            groupBox5.SuspendLayout();
+            groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMatrix).BeginInit();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(14, 16);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(774, 232);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Добавление";
+            groupBox1.Controls.Add(groupBox3);
+            groupBox1.Controls.Add(groupBox2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(677, 174);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Добавление";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.textBoxObjectName);
-            this.groupBox3.Controls.Add(this.buttonAddObject);
-            this.groupBox3.Controls.Add(this.comboBoxObjectPrivilege);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(408, 28);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(360, 198);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Добавление объектов";
+            groupBox3.Controls.Add(label5);
+            groupBox3.Controls.Add(textBoxObjectName);
+            groupBox3.Controls.Add(buttonAddObject);
+            groupBox3.Controls.Add(comboBoxObjectPrivilege);
+            groupBox3.Controls.Add(label4);
+            groupBox3.Location = new Point(357, 21);
+            groupBox3.Margin = new Padding(3, 2, 3, 2);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(3, 2, 3, 2);
+            groupBox3.Size = new Size(315, 148);
+            groupBox3.TabIndex = 3;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Добавление объектов";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 90);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(154, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Привилегия объекта";
+            label5.AutoSize = true;
+            label5.Location = new Point(5, 68);
+            label5.Name = "label5";
+            label5.Size = new Size(121, 15);
+            label5.TabIndex = 4;
+            label5.Text = "Привилегия объекта";
             // 
             // textBoxObjectName
             // 
-            this.textBoxObjectName.Location = new System.Drawing.Point(6, 60);
-            this.textBoxObjectName.Name = "textBoxObjectName";
-            this.textBoxObjectName.Size = new System.Drawing.Size(348, 27);
-            this.textBoxObjectName.TabIndex = 3;
+            textBoxObjectName.Location = new Point(5, 45);
+            textBoxObjectName.Margin = new Padding(3, 2, 3, 2);
+            textBoxObjectName.Name = "textBoxObjectName";
+            textBoxObjectName.Size = new Size(305, 23);
+            textBoxObjectName.TabIndex = 3;
             // 
             // buttonAddObject
             // 
-            this.buttonAddObject.Location = new System.Drawing.Point(6, 149);
-            this.buttonAddObject.Name = "buttonAddObject";
-            this.buttonAddObject.Size = new System.Drawing.Size(348, 43);
-            this.buttonAddObject.TabIndex = 2;
-            this.buttonAddObject.Text = "Добавить объект";
-            this.buttonAddObject.UseVisualStyleBackColor = true;
-            this.buttonAddObject.Click += new System.EventHandler(this.buttonAddObject_Click);
+            buttonAddObject.Location = new Point(5, 112);
+            buttonAddObject.Margin = new Padding(3, 2, 3, 2);
+            buttonAddObject.Name = "buttonAddObject";
+            buttonAddObject.Size = new Size(304, 32);
+            buttonAddObject.TabIndex = 2;
+            buttonAddObject.Text = "Добавить объект";
+            buttonAddObject.UseVisualStyleBackColor = true;
+            buttonAddObject.Click += buttonAddObject_Click;
             // 
             // comboBoxObjectPrivilege
             // 
-            this.comboBoxObjectPrivilege.FormattingEnabled = true;
-            this.comboBoxObjectPrivilege.Location = new System.Drawing.Point(6, 115);
-            this.comboBoxObjectPrivilege.Name = "comboBoxObjectPrivilege";
-            this.comboBoxObjectPrivilege.Size = new System.Drawing.Size(348, 28);
-            this.comboBoxObjectPrivilege.TabIndex = 1;
+            comboBoxObjectPrivilege.FormattingEnabled = true;
+            comboBoxObjectPrivilege.Location = new Point(5, 86);
+            comboBoxObjectPrivilege.Margin = new Padding(3, 2, 3, 2);
+            comboBoxObjectPrivilege.Name = "comboBoxObjectPrivilege";
+            comboBoxObjectPrivilege.Size = new Size(305, 23);
+            comboBoxObjectPrivilege.TabIndex = 1;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Имя объекта";
+            label4.AutoSize = true;
+            label4.Location = new Point(5, 28);
+            label4.Name = "label4";
+            label4.Size = new Size(78, 15);
+            label4.TabIndex = 0;
+            label4.Text = "Имя объекта";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBoxUserName);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.buttonAddUser);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.comboBoxUserPrivilege);
-            this.groupBox2.Location = new System.Drawing.Point(14, 28);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(388, 198);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Добавление пользователей";
+            groupBox2.Controls.Add(textBoxUserName);
+            groupBox2.Controls.Add(label3);
+            groupBox2.Controls.Add(buttonAddUser);
+            groupBox2.Controls.Add(label2);
+            groupBox2.Controls.Add(comboBoxUserPrivilege);
+            groupBox2.Location = new Point(12, 21);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(340, 148);
+            groupBox2.TabIndex = 2;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Добавление пользователей";
             // 
             // textBoxUserName
             // 
-            this.textBoxUserName.Location = new System.Drawing.Point(6, 62);
-            this.textBoxUserName.Name = "textBoxUserName";
-            this.textBoxUserName.Size = new System.Drawing.Size(376, 27);
-            this.textBoxUserName.TabIndex = 4;
+            textBoxUserName.Location = new Point(5, 46);
+            textBoxUserName.Margin = new Padding(3, 2, 3, 2);
+            textBoxUserName.Name = "textBoxUserName";
+            textBoxUserName.Size = new Size(330, 23);
+            textBoxUserName.TabIndex = 4;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Имя пользователя";
+            label3.AutoSize = true;
+            label3.Location = new Point(5, 28);
+            label3.Name = "label3";
+            label3.Size = new Size(109, 15);
+            label3.TabIndex = 3;
+            label3.Text = "Имя пользователя";
             // 
             // buttonAddUser
             // 
-            this.buttonAddUser.Location = new System.Drawing.Point(6, 149);
-            this.buttonAddUser.Name = "buttonAddUser";
-            this.buttonAddUser.Size = new System.Drawing.Size(376, 43);
-            this.buttonAddUser.TabIndex = 2;
-            this.buttonAddUser.Text = "Добавить пользователя";
-            this.buttonAddUser.UseVisualStyleBackColor = true;
-            this.buttonAddUser.Click += new System.EventHandler(this.buttonAddUser_Click);
+            buttonAddUser.Location = new Point(5, 112);
+            buttonAddUser.Margin = new Padding(3, 2, 3, 2);
+            buttonAddUser.Name = "buttonAddUser";
+            buttonAddUser.Size = new Size(329, 32);
+            buttonAddUser.TabIndex = 2;
+            buttonAddUser.Text = "Добавить пользователя";
+            buttonAddUser.UseVisualStyleBackColor = true;
+            buttonAddUser.Click += buttonAddUser_Click;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Привилегия пользователя";
+            label2.AutoSize = true;
+            label2.Location = new Point(5, 69);
+            label2.Name = "label2";
+            label2.Size = new Size(152, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Привилегия пользователя";
             // 
             // comboBoxUserPrivilege
             // 
-            this.comboBoxUserPrivilege.FormattingEnabled = true;
-            this.comboBoxUserPrivilege.Location = new System.Drawing.Point(6, 115);
-            this.comboBoxUserPrivilege.Name = "comboBoxUserPrivilege";
-            this.comboBoxUserPrivilege.Size = new System.Drawing.Size(376, 28);
-            this.comboBoxUserPrivilege.TabIndex = 0;
+            comboBoxUserPrivilege.FormattingEnabled = true;
+            comboBoxUserPrivilege.Location = new Point(5, 86);
+            comboBoxUserPrivilege.Margin = new Padding(3, 2, 3, 2);
+            comboBoxUserPrivilege.Name = "comboBoxUserPrivilege";
+            comboBoxUserPrivilege.Size = new Size(330, 23);
+            comboBoxUserPrivilege.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 20);
-            this.label1.TabIndex = 1;
+            label1.AutoSize = true;
+            label1.Location = new Point(7, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 15);
+            label1.TabIndex = 1;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.groupBox6);
-            this.groupBox4.Controls.Add(this.groupBox5);
-            this.groupBox4.Location = new System.Drawing.Point(12, 254);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(776, 167);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Удаление";
+            groupBox4.Controls.Add(groupBox6);
+            groupBox4.Controls.Add(groupBox5);
+            groupBox4.Location = new Point(10, 190);
+            groupBox4.Margin = new Padding(3, 2, 3, 2);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Padding = new Padding(3, 2, 3, 2);
+            groupBox4.Size = new Size(679, 125);
+            groupBox4.TabIndex = 1;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Удаление";
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.comboBoxObjects);
-            this.groupBox6.Controls.Add(this.label7);
-            this.groupBox6.Controls.Add(this.buttonDeleteObject);
-            this.groupBox6.Location = new System.Drawing.Point(410, 26);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(354, 135);
-            this.groupBox6.TabIndex = 1;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Удаление объектов";
+            groupBox6.Controls.Add(comboBoxObjects);
+            groupBox6.Controls.Add(label7);
+            groupBox6.Controls.Add(buttonDeleteObject);
+            groupBox6.Location = new Point(359, 20);
+            groupBox6.Margin = new Padding(3, 2, 3, 2);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Padding = new Padding(3, 2, 3, 2);
+            groupBox6.Size = new Size(310, 101);
+            groupBox6.TabIndex = 1;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "Удаление объектов";
             // 
             // comboBoxObjects
             // 
-            this.comboBoxObjects.FormattingEnabled = true;
-            this.comboBoxObjects.Location = new System.Drawing.Point(6, 57);
-            this.comboBoxObjects.Name = "comboBoxObjects";
-            this.comboBoxObjects.Size = new System.Drawing.Size(342, 28);
-            this.comboBoxObjects.TabIndex = 2;
+            comboBoxObjects.FormattingEnabled = true;
+            comboBoxObjects.Location = new Point(5, 43);
+            comboBoxObjects.Margin = new Padding(3, 2, 3, 2);
+            comboBoxObjects.Name = "comboBoxObjects";
+            comboBoxObjects.Size = new Size(300, 23);
+            comboBoxObjects.TabIndex = 2;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 34);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Выберите объект";
+            label7.AutoSize = true;
+            label7.Location = new Point(5, 26);
+            label7.Name = "label7";
+            label7.Size = new Size(102, 15);
+            label7.TabIndex = 1;
+            label7.Text = "Выберите объект";
             // 
             // buttonDeleteObject
             // 
-            this.buttonDeleteObject.Location = new System.Drawing.Point(6, 91);
-            this.buttonDeleteObject.Name = "buttonDeleteObject";
-            this.buttonDeleteObject.Size = new System.Drawing.Size(342, 38);
-            this.buttonDeleteObject.TabIndex = 0;
-            this.buttonDeleteObject.Text = "Удалить объект";
-            this.buttonDeleteObject.UseVisualStyleBackColor = true;
-            this.buttonDeleteObject.Click += new System.EventHandler(this.buttonDeleteObject_Click);
+            buttonDeleteObject.Location = new Point(5, 68);
+            buttonDeleteObject.Margin = new Padding(3, 2, 3, 2);
+            buttonDeleteObject.Name = "buttonDeleteObject";
+            buttonDeleteObject.Size = new Size(299, 28);
+            buttonDeleteObject.TabIndex = 0;
+            buttonDeleteObject.Text = "Удалить объект";
+            buttonDeleteObject.UseVisualStyleBackColor = true;
+            buttonDeleteObject.Click += buttonDeleteObject_Click;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.buttonDeleteUser);
-            this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Controls.Add(this.comboBoxUsers);
-            this.groupBox5.Location = new System.Drawing.Point(10, 26);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(388, 135);
-            this.groupBox5.TabIndex = 0;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Удаление пользователей";
+            groupBox5.Controls.Add(buttonDeleteUser);
+            groupBox5.Controls.Add(label6);
+            groupBox5.Controls.Add(comboBoxUsers);
+            groupBox5.Location = new Point(9, 20);
+            groupBox5.Margin = new Padding(3, 2, 3, 2);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Padding = new Padding(3, 2, 3, 2);
+            groupBox5.Size = new Size(340, 101);
+            groupBox5.TabIndex = 0;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Удаление пользователей";
             // 
             // buttonDeleteUser
             // 
-            this.buttonDeleteUser.Location = new System.Drawing.Point(6, 91);
-            this.buttonDeleteUser.Name = "buttonDeleteUser";
-            this.buttonDeleteUser.Size = new System.Drawing.Size(376, 38);
-            this.buttonDeleteUser.TabIndex = 2;
-            this.buttonDeleteUser.Text = "Удалить пользователя";
-            this.buttonDeleteUser.UseVisualStyleBackColor = true;
-            this.buttonDeleteUser.Click += new System.EventHandler(this.buttonDeleteUser_Click);
+            buttonDeleteUser.Location = new Point(5, 68);
+            buttonDeleteUser.Margin = new Padding(3, 2, 3, 2);
+            buttonDeleteUser.Name = "buttonDeleteUser";
+            buttonDeleteUser.Size = new Size(329, 28);
+            buttonDeleteUser.TabIndex = 2;
+            buttonDeleteUser.Text = "Удалить пользователя";
+            buttonDeleteUser.UseVisualStyleBackColor = true;
+            buttonDeleteUser.Click += buttonDeleteUser_Click;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 34);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(178, 20);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Выберите пользователя";
+            label6.AutoSize = true;
+            label6.Location = new Point(5, 26);
+            label6.Name = "label6";
+            label6.Size = new Size(139, 15);
+            label6.TabIndex = 1;
+            label6.Text = "Выберите пользователя";
             // 
             // comboBoxUsers
             // 
-            this.comboBoxUsers.FormattingEnabled = true;
-            this.comboBoxUsers.Location = new System.Drawing.Point(8, 57);
-            this.comboBoxUsers.Name = "comboBoxUsers";
-            this.comboBoxUsers.Size = new System.Drawing.Size(374, 28);
-            this.comboBoxUsers.TabIndex = 0;
+            comboBoxUsers.FormattingEnabled = true;
+            comboBoxUsers.Location = new Point(7, 43);
+            comboBoxUsers.Margin = new Padding(3, 2, 3, 2);
+            comboBoxUsers.Name = "comboBoxUsers";
+            comboBoxUsers.Size = new Size(328, 23);
+            comboBoxUsers.TabIndex = 0;
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.buttonEditSettings);
-            this.groupBox7.Controls.Add(this.textBoxRightsUserToObject);
-            this.groupBox7.Controls.Add(this.label11);
-            this.groupBox7.Controls.Add(this.comboBoxMatrixObjects);
-            this.groupBox7.Controls.Add(this.label10);
-            this.groupBox7.Controls.Add(this.textBoxUserRights);
-            this.groupBox7.Controls.Add(this.label9);
-            this.groupBox7.Controls.Add(this.label8);
-            this.groupBox7.Controls.Add(this.comboBoxMatrixUsers);
-            this.groupBox7.Location = new System.Drawing.Point(12, 427);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(776, 232);
-            this.groupBox7.TabIndex = 2;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Матрица прав доступа и привилегии";
+            groupBox7.Controls.Add(dgvMatrix);
+            groupBox7.Controls.Add(buttonEditSettings);
+            groupBox7.Controls.Add(textBoxObjectPriv);
+            groupBox7.Controls.Add(label11);
+            groupBox7.Controls.Add(comboBoxMatrixObjects);
+            groupBox7.Controls.Add(label10);
+            groupBox7.Controls.Add(textBoxUserPriv);
+            groupBox7.Controls.Add(label9);
+            groupBox7.Controls.Add(label8);
+            groupBox7.Controls.Add(comboBoxMatrixUsers);
+            groupBox7.Location = new Point(10, 320);
+            groupBox7.Margin = new Padding(3, 2, 3, 2);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Padding = new Padding(3, 2, 3, 2);
+            groupBox7.Size = new Size(679, 479);
+            groupBox7.TabIndex = 2;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "Матрица прав доступа и привилегии";
+            // 
+            // dgvMatrix
+            // 
+            dgvMatrix.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMatrix.Location = new Point(9, 148);
+            dgvMatrix.Name = "dgvMatrix";
+            dgvMatrix.RowTemplate.Height = 25;
+            dgvMatrix.Size = new Size(665, 263);
+            dgvMatrix.TabIndex = 10;
+            dgvMatrix.CellValueChanged += dgvMatrix_CellValueChanged;
             // 
             // buttonEditSettings
             // 
-            this.buttonEditSettings.Location = new System.Drawing.Point(10, 180);
-            this.buttonEditSettings.Name = "buttonEditSettings";
-            this.buttonEditSettings.Size = new System.Drawing.Size(748, 46);
-            this.buttonEditSettings.TabIndex = 8;
-            this.buttonEditSettings.Text = "Редактировать";
-            this.buttonEditSettings.UseVisualStyleBackColor = true;
-            this.buttonEditSettings.Click += new System.EventHandler(this.buttonEditSettings_Click);
+            buttonEditSettings.Location = new Point(7, 426);
+            buttonEditSettings.Margin = new Padding(3, 2, 3, 2);
+            buttonEditSettings.Name = "buttonEditSettings";
+            buttonEditSettings.Size = new Size(654, 34);
+            buttonEditSettings.TabIndex = 8;
+            buttonEditSettings.Text = "Редактировать";
+            buttonEditSettings.UseVisualStyleBackColor = true;
+            buttonEditSettings.Click += buttonEditSettings_Click;
             // 
-            // textBoxRightsUserToObject
+            // textBoxObjectPriv
             // 
-            this.textBoxRightsUserToObject.Location = new System.Drawing.Point(594, 127);
-            this.textBoxRightsUserToObject.Name = "textBoxRightsUserToObject";
-            this.textBoxRightsUserToObject.Size = new System.Drawing.Size(61, 27);
-            this.textBoxRightsUserToObject.TabIndex = 7;
-            this.textBoxRightsUserToObject.Visible = false;
+            textBoxObjectPriv.Location = new Point(437, 97);
+            textBoxObjectPriv.Margin = new Padding(3, 2, 3, 2);
+            textBoxObjectPriv.Name = "textBoxObjectPriv";
+            textBoxObjectPriv.Size = new Size(54, 23);
+            textBoxObjectPriv.TabIndex = 7;
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(284, 130);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(262, 20);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Права пользователя к объекту (0-2):";
-            this.label11.Visible = false;
+            label11.AutoSize = true;
+            label11.Location = new Point(248, 98);
+            label11.Name = "label11";
+            label11.Size = new Size(152, 15);
+            label11.TabIndex = 6;
+            label11.Text = "Привилегия объекта (0-2):";
             // 
             // comboBoxMatrixObjects
             // 
-            this.comboBoxMatrixObjects.FormattingEnabled = true;
-            this.comboBoxMatrixObjects.Location = new System.Drawing.Point(10, 127);
-            this.comboBoxMatrixObjects.Name = "comboBoxMatrixObjects";
-            this.comboBoxMatrixObjects.Size = new System.Drawing.Size(266, 28);
-            this.comboBoxMatrixObjects.TabIndex = 5;
-            this.comboBoxMatrixObjects.Visible = false;
-            this.comboBoxMatrixObjects.SelectedIndexChanged += new System.EventHandler(this.comboBoxMatrixObjects_SelectedIndexChanged);
+            comboBoxMatrixObjects.FormattingEnabled = true;
+            comboBoxMatrixObjects.Location = new Point(9, 95);
+            comboBoxMatrixObjects.Margin = new Padding(3, 2, 3, 2);
+            comboBoxMatrixObjects.Name = "comboBoxMatrixObjects";
+            comboBoxMatrixObjects.Size = new Size(233, 23);
+            comboBoxMatrixObjects.TabIndex = 5;
+            comboBoxMatrixObjects.SelectedIndexChanged += comboBoxMatrixObjects_SelectedIndexChanged;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(10, 104);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(130, 20);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Выберите объект";
-            this.label10.Visible = false;
+            label10.AutoSize = true;
+            label10.Location = new Point(9, 78);
+            label10.Name = "label10";
+            label10.Size = new Size(102, 15);
+            label10.TabIndex = 4;
+            label10.Text = "Выберите объект";
             // 
-            // textBoxUserRights
+            // textBoxUserPriv
             // 
-            this.textBoxUserRights.Location = new System.Drawing.Point(594, 61);
-            this.textBoxUserRights.Name = "textBoxUserRights";
-            this.textBoxUserRights.Size = new System.Drawing.Size(61, 27);
-            this.textBoxUserRights.TabIndex = 3;
-            this.textBoxUserRights.Visible = false;
+            textBoxUserPriv.Location = new Point(437, 48);
+            textBoxUserPriv.Margin = new Padding(3, 2, 3, 2);
+            textBoxUserPriv.Name = "textBoxUserPriv";
+            textBoxUserPriv.Size = new Size(54, 23);
+            textBoxUserPriv.TabIndex = 3;
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(284, 64);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(304, 20);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Права по редактированию матрицы (0-1):";
-            this.label9.Visible = false;
+            label9.AutoSize = true;
+            label9.Location = new Point(248, 48);
+            label9.Name = "label9";
+            label9.Size = new Size(183, 15);
+            label9.TabIndex = 2;
+            label9.Text = "Привилегия пользователя (0-2):";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 38);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(178, 20);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Выберите пользователя";
+            label8.AutoSize = true;
+            label8.Location = new Point(7, 28);
+            label8.Name = "label8";
+            label8.Size = new Size(139, 15);
+            label8.TabIndex = 1;
+            label8.Text = "Выберите пользователя";
             // 
             // comboBoxMatrixUsers
             // 
-            this.comboBoxMatrixUsers.FormattingEnabled = true;
-            this.comboBoxMatrixUsers.Location = new System.Drawing.Point(10, 61);
-            this.comboBoxMatrixUsers.Name = "comboBoxMatrixUsers";
-            this.comboBoxMatrixUsers.Size = new System.Drawing.Size(266, 28);
-            this.comboBoxMatrixUsers.TabIndex = 0;
-            this.comboBoxMatrixUsers.SelectedIndexChanged += new System.EventHandler(this.comboBoxMatrixUsers_SelectedIndexChanged);
+            comboBoxMatrixUsers.FormattingEnabled = true;
+            comboBoxMatrixUsers.Location = new Point(9, 46);
+            comboBoxMatrixUsers.Margin = new Padding(3, 2, 3, 2);
+            comboBoxMatrixUsers.Name = "comboBoxMatrixUsers";
+            comboBoxMatrixUsers.Size = new Size(233, 23);
+            comboBoxMatrixUsers.TabIndex = 0;
+            comboBoxMatrixUsers.SelectedIndexChanged += comboBoxMatrixUsers_SelectedIndexChanged;
             // 
             // FormSettings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 671);
-            this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "FormSettings";
-            this.Text = "FormSettings";
-            this.Load += new System.EventHandler(this.FormSettings_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(700, 804);
+            Controls.Add(groupBox7);
+            Controls.Add(groupBox4);
+            Controls.Add(groupBox1);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "FormSettings";
+            Text = "FormSettings";
+            Load += FormSettings_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
+            groupBox7.ResumeLayout(false);
+            groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMatrix).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -452,11 +489,12 @@
         private Label label11;
         private ComboBox comboBoxMatrixObjects;
         private Label label10;
-        private TextBox textBoxUserRights;
+        private TextBox textBoxUserPriv;
         private Label label9;
         private Label label8;
         private ComboBox comboBoxMatrixUsers;
         private Button buttonEditSettings;
-        private TextBox textBoxRightsUserToObject;
+        private TextBox textBoxObjectPriv;
+        private DataGridView dgvMatrix;
     }
 }
