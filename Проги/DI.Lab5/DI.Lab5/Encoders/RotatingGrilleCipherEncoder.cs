@@ -1,4 +1,5 @@
 ﻿using DI.Lab5.Base;
+using DI.Lab5.Realization.Extensions;
 using System.Text;
 
 namespace DI.Lab5.Realization.Encoders
@@ -15,7 +16,7 @@ namespace DI.Lab5.Realization.Encoders
         private string NormalizeMessage(string message)
         {
             int N = _grille.Grille.Count;
-            var normalizedMsg = "";
+            var normalizedMsg = message;
 
             if(message.Length % N != 0)
             {
@@ -38,14 +39,19 @@ namespace DI.Lab5.Realization.Encoders
             var matrixes = new List<List<List<char>>>();
             while (msgIndex < normalizedMsg.Length)
             {
-                var matrixVariation = new List<List<char>>(_grille.Grille);
-                for (int i = 0; i < N * N; i++)
+                var matrixVariation = _grille.Grille.Clone();
+                for(int turn = 0; turn < 4; turn++)
                 {
-                    for (int j = 0; j < N; j++, i++)
+                    for (int i = 0; i < N; i++)
                     {
-                        if (matrixVariation[i][j] == 'X')
-                            matrixVariation[i][j] = normalizedMsg[msgIndex];
-                        msgIndex++;
+                        for (int j = 0; j < matrixVariation[i].Count; j++)
+                        {
+                            if (matrixVariation[i][j] == 'X')
+                            {
+                                matrixVariation[i][j] = normalizedMsg[msgIndex];
+                                msgIndex++;
+                            }
+                        }
                     }
                     matrixes.Add(matrixVariation);
                     matrixVariation = _grille.RotateOn90DegClockwise();

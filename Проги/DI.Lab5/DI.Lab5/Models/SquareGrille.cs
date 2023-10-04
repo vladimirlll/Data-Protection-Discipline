@@ -1,5 +1,6 @@
 ﻿using DI.Lab5.Base;
 using DI.Lab5.Realization.Exceptions;
+using DI.Lab5.Realization.Extensions;
 
 namespace DI.Lab5.Realization.Models
 {
@@ -109,7 +110,7 @@ namespace DI.Lab5.Realization.Models
                 }
             }
 
-            return RotatedGrille;
+            return RotatedGrille.Clone();
         }
     }
 }

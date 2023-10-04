@@ -9,7 +9,13 @@ namespace DI.Lab5.Tests
         [Fact]
         public void RotatingGrilleCipherEncoder_Encode_WithMultipleInitMessageLengthToGrilleSquare_ShouldReturnEncodedLengthEqualToInitMessage()
         {
-            var grille = new SquareGrille(4);
+            var grille = new SquareGrille(new List<List<char>>()
+            {
+                new List<char>() {'X', ' ', ' ', ' '},
+                new List<char>() {' ', ' ', ' ', 'X'},
+                new List<char>() {' ', 'X', ' ', ' '},
+                new List<char>() {' ', ' ', 'X', ' '},
+            });
             var enc = new RotatingGrilleCipherEncoder(grille);
 
             var encoded = enc.Encode("0123456789ABCDEF");
