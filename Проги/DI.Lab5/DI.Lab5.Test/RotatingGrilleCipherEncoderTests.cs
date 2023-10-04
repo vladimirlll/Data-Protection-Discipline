@@ -24,6 +24,23 @@ namespace DI.Lab5.Tests
         }
 
         [Fact]
+        public void RotatingGrilleCipherEncoder_Encode_WithNotMultipleInitMessageLengthToGrilleSquare_ShouldReturnEncodedLengthEqualToMultipleToGrilleSquare()
+        {
+            var grille = new SquareGrille(new List<List<char>>()
+            {
+                new List<char>() {'X', ' ', ' ', ' '},
+                new List<char>() {' ', ' ', ' ', 'X'},
+                new List<char>() {' ', 'X', ' ', ' '},
+                new List<char>() {' ', ' ', 'X', ' '},
+            });
+            var enc = new RotatingGrilleCipherEncoder(grille);
+
+            var encoded = enc.Encode("0123");
+
+            encoded.Should().HaveLength(16);
+        }
+
+        [Fact]
         public void RotatingGrilleCipherEncoder_Decode_WithMultipleInitMessageLengthToGrilleSquareFromEncode_ShouldReturnInitMessage()
         {
             var grille = new SquareGrille(4);
