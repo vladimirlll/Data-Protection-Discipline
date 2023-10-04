@@ -18,11 +18,11 @@ namespace DI.Lab5.Realization.Encoders
             int N = _grille.Grille.Count;
             var normalizedMsg = message;
 
-            if (normalizedMsg.Length < N * N || (normalizedMsg.Length % N * N) != 0)
+            if (normalizedMsg.Length < N * N || (normalizedMsg.Length % (N * N)) != 0)
             {
                 Random rnd = new Random();
                 StringBuilder builder = new StringBuilder(normalizedMsg);
-                while (builder.Length < N * N || (builder.Length % N * N) != 0)
+                while (builder.Length < N * N || (builder.Length % (N * N)) != 0)
                 {
                     char addSym = (char)rnd.Next('А', 'Я' + 1);
                     builder.Append(addSym);
