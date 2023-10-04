@@ -41,6 +41,18 @@ namespace DI.Lab5.Realization.Encoders
             return normalizedMsg;
         }
 
+        private List<List<List<char>>> Rotations(string normalizedMsg)
+        {
+            var rotations = new List<List<List<char>>>();
+            rotations.Add(_grille.Grille.Clone());
+
+            for (int i = 4; i < normalizedMsg.Length; i += 4)
+            {
+                rotations.Add(_grille.RotateOn90DegClockwise());
+            }
+            return rotations;
+        }
+
         private List<List<List<char>>> MatrixVariations(string normalizedMsg)
         {
             int N = _grille.Grille.Count;
@@ -102,7 +114,26 @@ namespace DI.Lab5.Realization.Encoders
             if (!IsMessageNormalized(encoded))
                 throw new BadEncodedMessageException();
 
-            return encoded;
+            int N = _grille.Grille.Count;
+            var rotations = Rotations(encoded);
+            var decodedSB = new StringBuilder();
+            for (int m = 0; m < rotations.Count; m++)
+            {
+                int frameOffset = (m / N) * N * N;
+                for (int i = 0; i < rotations[m].Count; i++)
+                {
+                    var matrixOffset = i * N;
+                    for (int j = 0; j < rotations[m][i].Count; j++)
+                    {
+                        if (rotations[m][i][j] == 'X')
+                        {
+                            decodedSB.Append(encoded[frameOffset + matrixOffset + j]);
+                        }
+                    }
+                }
+            }
+
+            return decodedSB.ToString();
         }
 
     }

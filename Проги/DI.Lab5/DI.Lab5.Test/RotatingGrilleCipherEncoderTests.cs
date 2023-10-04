@@ -86,5 +86,19 @@ namespace DI.Lab5.Tests
 
             genEx.Should().Throw<BadEncodedMessageException>();
         }
+
+        [Fact]
+        public void RotatingGrilleCipherEncoder_Decode_WithInitMessageLengthSmallerThanGrilleSquareFromEncode_ShouldReturnSquareLengthDecoded()
+        {
+            var grille = new SquareGrille(4);
+            var enc = new RotatingGrilleCipherEncoder(grille);
+            var msg = "0123";
+
+            var encoded = enc.Encode(msg);
+            var decoded = enc.Decode(encoded);
+
+            encoded.Should().HaveLength(16);
+            decoded.Should().HaveLength(encoded.Length);
+        }
     }
 }
