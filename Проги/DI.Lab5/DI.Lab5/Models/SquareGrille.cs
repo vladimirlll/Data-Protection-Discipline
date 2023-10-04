@@ -1,8 +1,7 @@
 ﻿using DI.Lab5.Base;
 using DI.Lab5.Realization.Exceptions;
-using System.Linq;
 
-namespace DI.Lab5.Client.Models
+namespace DI.Lab5.Realization.Models
 {
     public class SquareGrille : IGrille
     {

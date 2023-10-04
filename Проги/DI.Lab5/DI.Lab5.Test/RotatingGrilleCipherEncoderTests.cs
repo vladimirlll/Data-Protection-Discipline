@@ -1,4 +1,5 @@
 ﻿using DI.Lab5.Realization.Encoders;
+using DI.Lab5.Realization.Models;
 using FluentAssertions;
 
 namespace DI.Lab5.Tests
