@@ -1,4 +1,5 @@
 ﻿using DI.Lab5.Base;
+using DI.Lab5.Realization.Exceptions;
 using DI.Lab5.Realization.Extensions;
 using System.Text;
 
@@ -13,16 +14,24 @@ namespace DI.Lab5.Realization.Encoders
             _grille = grille;
         }
 
+        private bool IsMessageNormalized(string message)
+        {
+            int N = _grille.Grille.Count;
+            if (message.Length < N * N || (message.Length % (N * N)) != 0)
+                return false;
+            return true;
+        }
+
         private string NormalizeMessage(string message)
         {
             int N = _grille.Grille.Count;
             var normalizedMsg = message;
 
-            if (normalizedMsg.Length < N * N || (normalizedMsg.Length % (N * N)) != 0)
+            if (!IsMessageNormalized(normalizedMsg))
             {
                 Random rnd = new Random();
                 StringBuilder builder = new StringBuilder(normalizedMsg);
-                while (builder.Length < N * N || (builder.Length % (N * N)) != 0)
+                while (!IsMessageNormalized(builder.ToString()))
                 {
                     char addSym = (char)rnd.Next('А', 'Я' + 1);
                     builder.Append(addSym);
@@ -90,7 +99,10 @@ namespace DI.Lab5.Realization.Encoders
 
         public string Decode(string encoded)
         {
-            throw new NotImplementedException();
+            if (!IsMessageNormalized(encoded))
+                throw new BadEncodedMessageException();
+
+            return encoded;
         }
 
     }

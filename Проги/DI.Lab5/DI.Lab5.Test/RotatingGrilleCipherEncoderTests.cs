@@ -1,4 +1,5 @@
 ﻿using DI.Lab5.Realization.Encoders;
+using DI.Lab5.Realization.Exceptions;
 using DI.Lab5.Realization.Models;
 using FluentAssertions;
 
@@ -67,7 +68,23 @@ namespace DI.Lab5.Tests
             var encoded = enc.Encode(msg);
             var decoded = enc.Decode(encoded);
 
+            decoded.Should().HaveLength(decoded.Length);
             decoded.Should().BeEquivalentTo(msg);
+        }
+
+        [Fact]
+        public void RotatingGrilleCipherEncoder_Decode_WithNotMultipleInitMessageLengthToGrilleSquareFromEncode_ShouldThrowException()
+        {
+            var grille = new SquareGrille(4);
+            var enc = new RotatingGrilleCipherEncoder(grille);
+            var encoded = "0123";
+
+            Action genEx = () =>
+            {
+                var decoded = enc.Decode(encoded);
+            };
+
+            genEx.Should().Throw<BadEncodedMessageException>();
         }
     }
 }
