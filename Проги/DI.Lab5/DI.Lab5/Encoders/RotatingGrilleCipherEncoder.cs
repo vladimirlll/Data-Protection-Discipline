@@ -13,7 +13,7 @@ namespace DI.Lab5.Realization.Encoders
 
         public string Encode(string message)
         {
-            throw new NotImplementedException();
+
         }
 
 

@@ -63,26 +63,51 @@ namespace DI.Lab5.Client.Models
 
             bool IsGrilleContainsOnlyGoodSymbols()
             {
-                foreach (var row in grille)
-                {
-                    foreach (var item in row)
-                    {
-                        if (item != ' ' && item != 'X')
-                            return false;
-                    }
-                }
-                return true;
-            }
+                var filledSquares = grille.SelectMany(x => x).Where(x => x == ' ').Count();
+                var holes = grille.SelectMany(x => x).Where(x => x == 'X').Count();
 
-            int HolesCount() => grille.SelectMany(x => x).ToList().Select(h => h == 'X').Count();
+                if (holes == grille.Count && (filledSquares + holes) == grille.Count * grille.Count)
+                    return true;
+                return false;
+            }
 
             if (grille.Count == 0 || !IsGrilleSquare())
                 throw new InputCharMatrixBadSizeException();
 
-            if (!IsGrilleContainsOnlyGoodSymbols() && !(HolesCount() == grille.Count))
+            if (!IsGrilleContainsOnlyGoodSymbols())
                 throw new InputCharMatrixUnknownSymbolsException();
 
             Grille = grille;
+        }
+
+        public List<List<char>> RotateOn90DegClockwise()
+        {
+            int N = Grille.Count;
+            var result = new List<List<char>>(Grille);
+
+            // Транспонирование матрицы
+            for (int i = 0; i < N; i++)
+            {
+                for(int j = 0; j < i; j++)
+                {
+                    char temp = result[i][j];
+                    result[i][j] = result[j][i];
+                    result[j][i] = temp;
+                }
+            }
+
+            // Поменять столбцы местами (сначала дальние между собой, потом которые перед дальними и тд)
+            for(int i = 0; i < N; i++)
+            {
+                for(int j = 0; j < N/2; j++)
+                {
+                    char temp = result[i][j];
+                    result[i][j] = result[i][N - j - 1];
+                    result[i][N - j - 1] = temp;
+                }
+            }
+
+            return result;
         }
     }
 }
