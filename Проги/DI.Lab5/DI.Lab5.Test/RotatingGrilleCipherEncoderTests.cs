@@ -1,5 +1,6 @@
 ﻿using DI.Lab5.Realization.Encoders;
 using DI.Lab5.Realization.Exceptions;
+using DI.Lab5.Realization.Extensions;
 using DI.Lab5.Realization.Models;
 using FluentAssertions;
 
@@ -68,8 +69,8 @@ namespace DI.Lab5.Tests
             var encoded = enc.Encode(msg);
             var decoded = enc.Decode(encoded);
 
-            decoded.Should().HaveLength(decoded.Length);
-            decoded.Should().BeEquivalentTo(msg);
+            decoded.Should().HaveLength(encoded.Length);
+            decoded.Should().BeEquivalentTo(msg, grille.Grille.ToStr());
         }
 
         [Fact]
@@ -93,12 +94,30 @@ namespace DI.Lab5.Tests
             var grille = new SquareGrille(4);
             var enc = new RotatingGrilleCipherEncoder(grille);
             var msg = "0123";
+            var testMsg = "0123БГЧЮЛБРТФТНФ";
 
-            var encoded = enc.Encode(msg);
+            var encoded = enc.Encode(testMsg);
             var decoded = enc.Decode(encoded);
 
             encoded.Should().HaveLength(16);
             decoded.Should().HaveLength(encoded.Length);
+            Console.WriteLine("EZ");
+            decoded.Should().StartWithEquivalentOf(testMsg);
+        }
+
+        [Fact]
+        public void RotatingGrilleCipherEncoder_Decode_WithInitMessageLengthMoreThanGrilleSquareFromEncode_ShouldReturnSquareLengthDecoded()
+        {
+            var grille = new SquareGrille(4);
+            var enc = new RotatingGrilleCipherEncoder(grille);
+            var msg = "0123456789ABCDEFG";
+
+            var encoded = enc.Encode(msg);
+            var decoded = enc.Decode(encoded);
+
+            encoded.Should().HaveLength(32);
+            decoded.Should().HaveLength(encoded.Length);
+            decoded.Should().StartWithEquivalentOf(msg);
         }
     }
 }

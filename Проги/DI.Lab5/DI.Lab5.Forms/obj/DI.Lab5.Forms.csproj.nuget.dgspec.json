@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5\\DI.Lab5.csproj": {}
+    "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5.Forms\\DI.Lab5.Forms.csproj": {}
   },
   "projects": {
-    "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5\\DI.Lab5.csproj": {
+    "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5.Forms\\DI.Lab5.Forms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5\\DI.Lab5.csproj",
-        "projectName": "DI.Lab5",
-        "projectPath": "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5\\DI.Lab5.csproj",
+        "projectUniqueName": "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5.Forms\\DI.Lab5.Forms.csproj",
+        "projectName": "DI.Lab5.Forms",
+        "projectPath": "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5.Forms\\DI.Lab5.Forms.csproj",
         "packagesPath": "C:\\Users\\spect\\.nuget\\packages\\",
-        "outputPath": "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5\\obj\\",
+        "outputPath": "D:\\4_course\\Защита информации\\Проги\\DI.Lab5\\DI.Lab5.Forms\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Programs\\Microsoft\\Visual Studio\\Shared\\NuGetPackages"
@@ -22,15 +22,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net7.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net7.0-windows7.0": {
+            "targetAlias": "net7.0-windows",
             "projectReferences": {}
           }
         },
@@ -41,8 +41,8 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
           "imports": [
             "net461",
             "net462",
@@ -57,6 +57,9 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"

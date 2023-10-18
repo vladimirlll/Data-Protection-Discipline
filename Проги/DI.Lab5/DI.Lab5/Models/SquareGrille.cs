@@ -8,41 +8,41 @@ namespace DI.Lab5.Realization.Models
     {
         public List<List<char>> Grille { get; init; }
 
-        public List<List<char>> RotatedGrille { get; private set; }
+        private List<List<char>> _transformed;
+
+        public List<List<char>> TransformedGrille => _transformed;
 
         /// <summary>
         /// Рандомно создает квадратную решетку со стороной = n
         /// </summary>
-        /// <param name="n">Длина стороны</param>
-        public SquareGrille(int n)
+        /// <param name="k">Длина стороны четверти решетки</param>
+        public SquareGrille(int k)
         {
-            Grille = new List<List<char>>(n);
+            Grille = new List<List<char>>(k * 2);
 
             Random rnd = new Random();
 
+            var quarter = CreateQuarter(k);
+
             var holes = new List<int>();
-            while (holes.Count != n)
+
+            for (int i = 0; i < n; i++)
             {
-                var newVal = 0;
+                var holeIndex = 0;
                 do
                 {
-                    newVal = rnd.Next(1, n * n);
-                } while (holes.Contains(newVal));
-                holes.Add(newVal);
-            }
-
-            for(int i = 0; i < n; i++)
-            {
+                    holeIndex = rnd.Next(n);
+                } while (holes.Contains(holeIndex));
                 Grille.Add(new List<char>());
-                for(int j = 1; j <= n; j++)
+                for (int j = 0; j < n; j++)
                 {
-                    if (holes.Contains(i * n + j))
+                    if (j == holeIndex)
                         Grille[i].Add('X');
                     else
                         Grille[i].Add(' ');
                 }
             }
-            RotatedGrille = new List<List<char>>(Grille);
+            _transformed = Grille.Clone();
         }
 
         /// <summary>
@@ -81,36 +81,47 @@ namespace DI.Lab5.Realization.Models
                 throw new InputCharMatrixUnknownSymbolsException();
 
             Grille = grille;
-            RotatedGrille = new List<List<char>>(Grille);
+            _transformed = Grille.Clone();
+        }
+
+        public List<List<char>> TurnOver()
+        {
+            int N = _transformed.Count;
+
+            // Поменять столбцы местами (сначала дальние между собой, потом которые перед дальними и тд)
+            for (int i = 0; i < N; i++)
+            {
+                for(int j = 0; j < N/2; j++)
+                {
+                    char temp = _transformed[i][j];
+                    _transformed[i][j] = _transformed[i][N - j - 1];
+                    _transformed[i][N - j - 1] = temp;
+                }
+            }
+
+            return _transformed.Clone();
         }
 
         public List<List<char>> RotateOn90DegClockwise()
         {
-            int N = RotatedGrille.Count;
+            int N = _transformed.Count;
 
             // Транспонирование матрицы
             for (int i = 0; i < N; i++)
             {
                 for(int j = 0; j < i; j++)
                 {
-                    char temp = RotatedGrille[i][j];
-                    RotatedGrille[i][j] = RotatedGrille[j][i];
-                    RotatedGrille[j][i] = temp;
+                    char temp = _transformed[i][j];
+                    _transformed[i][j] = _transformed[j][i];
+                    _transformed[j][i] = temp;
                 }
             }
 
-            // Поменять столбцы местами (сначала дальние между собой, потом которые перед дальними и тд)
-            for(int i = 0; i < N; i++)
-            {
-                for(int j = 0; j < N/2; j++)
-                {
-                    char temp = RotatedGrille[i][j];
-                    RotatedGrille[i][j] = RotatedGrille[i][N - j - 1];
-                    RotatedGrille[i][N - j - 1] = temp;
-                }
-            }
+            _transformed = TurnOver();
 
-            return RotatedGrille.Clone();
+            return _transformed.Clone();
         }
+
+
     }
 }

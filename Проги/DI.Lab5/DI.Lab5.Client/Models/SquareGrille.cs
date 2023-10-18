@@ -1,6 +1,6 @@
 ﻿using DI.Lab5.Base;
+using DI.Lab5.Realization.Extensions;
 using DI.Lab5.Realization.Exceptions;
-using System.Linq;
 
 namespace DI.Lab5.Client.Models
 {
@@ -8,7 +8,7 @@ namespace DI.Lab5.Client.Models
     {
         public List<List<char>> Grille { get; init; }
 
-        public List<List<char>> RotatedGrille { get; private set; }
+        public List<List<char>> TransformedGrille { get; }
 
         /// <summary>
         /// Рандомно создает квадратную решетку со стороной = n
@@ -20,7 +20,7 @@ namespace DI.Lab5.Client.Models
 
             Random rnd = new Random();
 
-            var holes = new List<int>();
+            /*var holes = new List<int>();
             while (holes.Count != n)
             {
                 var newVal = 0;
@@ -42,7 +42,22 @@ namespace DI.Lab5.Client.Models
                         Grille[i].Add(' ');
                 }
             }
-            RotatedGrille = new List<List<char>>(Grille);
+            */
+
+            for (int i = 0; i < n; i++)
+            {
+                var holeIndex = rnd.Next(n + 1);
+                Grille.Add(new List<char>());
+                for (int j = 0; j < n; j++)
+                {
+                    if (j == holeIndex)
+                        Grille[i].Add('X');
+                    else
+                        Grille[i].Add(' ');
+                }
+            }
+
+            TransformedGrille = Grille.Clone();
         }
 
         /// <summary>
@@ -81,21 +96,21 @@ namespace DI.Lab5.Client.Models
                 throw new InputCharMatrixUnknownSymbolsException();
 
             Grille = grille;
-            RotatedGrille = new List<List<char>>(Grille);
+            TransformedGrille = Grille.Clone();
         }
 
         public List<List<char>> RotateOn90DegClockwise()
         {
-            int N = RotatedGrille.Count;
+            int N = TransformedGrille.Count;
 
             // Транспонирование матрицы
             for (int i = 0; i < N; i++)
             {
                 for(int j = 0; j < i; j++)
                 {
-                    char temp = RotatedGrille[i][j];
-                    RotatedGrille[i][j] = RotatedGrille[j][i];
-                    RotatedGrille[j][i] = temp;
+                    char temp = TransformedGrille[i][j];
+                    TransformedGrille[i][j] = TransformedGrille[j][i];
+                    TransformedGrille[j][i] = temp;
                 }
             }
 
@@ -104,13 +119,31 @@ namespace DI.Lab5.Client.Models
             {
                 for(int j = 0; j < N/2; j++)
                 {
-                    char temp = RotatedGrille[i][j];
-                    RotatedGrille[i][j] = RotatedGrille[i][N - j - 1];
-                    RotatedGrille[i][N - j - 1] = temp;
+                    char temp = TransformedGrille[i][j];
+                    TransformedGrille[i][j] = TransformedGrille[i][N - j - 1];
+                    TransformedGrille[i][N - j - 1] = temp;
                 }
             }
 
-            return RotatedGrille;
+            return TransformedGrille.Clone();
+        }
+
+        public List<List<char>> TurnOver()
+        {
+            int N = TransformedGrille.Count;
+
+            // Поменять столбцы местами (сначала дальние между собой, потом которые перед дальними и тд)
+            for (int i = 0; i < N; i++)
+            {
+                for (int j = 0; j < N / 2; j++)
+                {
+                    char temp = TransformedGrille[i][j];
+                    TransformedGrille[i][j] = TransformedGrille[i][N - j - 1];
+                    TransformedGrille[i][N - j - 1] = temp;
+                }
+            }
+
+            return TransformedGrille.Clone();
         }
     }
 }

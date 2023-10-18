@@ -41,26 +41,41 @@ namespace DI.Lab5.Realization.Encoders
             return normalizedMsg;
         }
 
-        private List<List<List<char>>> Rotations(string normalizedMsg)
-        {
-            var rotations = new List<List<List<char>>>();
-            rotations.Add(_grille.Grille.Clone());
-
-            for (int i = 4; i < normalizedMsg.Length; i += 4)
-            {
-                rotations.Add(_grille.RotateOn90DegClockwise());
-            }
-            return rotations;
-        }
-
         private List<List<List<char>>> MatrixVariations(string normalizedMsg)
         {
-            int N = _grille.Grille.Count;
+            var variations = new List<List<List<char>>>();
+            int msgIndex = 0;
+            while (msgIndex < normalizedMsg.Length)
+            {
+                var matrixVariation = _grille.Grille.Clone();
+                var symbolsInVariation = matrixVariation.Count;
+                for (int turn = 0; turn < 4; turn++)
+                {
+                    variations.Add(matrixVariation);
+                    if (turn % 2 == 0)
+                    {
+                        _grille.RotateOn90DegClockwise();
+                        matrixVariation = _grille.RotateOn90DegClockwise();
+
+                    }
+                    else if (turn % 2 == 1)
+                    {
+                        matrixVariation = _grille.TurnOver();
+                    }
+                    msgIndex += symbolsInVariation;
+                }
+            }
+            return variations;
+        }
+
+        private List<List<List<char>>> FilledMatrixVariations(string normalizedMsg)
+        {
             int msgIndex = 0;
             var matrixes = new List<List<List<char>>>();
             while (msgIndex < normalizedMsg.Length)
             {
                 var matrixVariation = _grille.Grille.Clone();
+                int N = matrixVariation.Count;
                 for(int turn = 0; turn < 4; turn++)
                 {
                     for (int i = 0; i < N; i++)
@@ -75,26 +90,35 @@ namespace DI.Lab5.Realization.Encoders
                         }
                     }
                     matrixes.Add(matrixVariation);
-                    matrixVariation = _grille.RotateOn90DegClockwise();
+                    if(turn % 2 == 0)
+                    {
+                        _grille.RotateOn90DegClockwise();
+                        matrixVariation = _grille.RotateOn90DegClockwise();
+
+                    }
+                    else if(turn % 2 == 1)
+                    {
+                        matrixVariation = _grille.TurnOver();
+                    }
                 }
             }
             return matrixes;
         }
 
-        private string EncodedMessage(List<List<List<char>>> matrixes, string normalizedMsg, int N)
+        private string EncodedMessage(List<List<List<char>>> matrixVariations, string normalizedMsg, int N)
         {
             StringBuilder encodedBuilder = new StringBuilder(normalizedMsg);
             int mult = normalizedMsg.Length / N;
-            for(int m = 0; m < matrixes.Count; m++)
+            for(int m = 0; m < matrixVariations.Count; m++)
             {
                 int frameOffset = (m / N) * N * N;
-                for(int i = 0; i < matrixes[m].Count; i++)
+                for(int i = 0; i < matrixVariations[m].Count; i++)
                 {
                     var matrixOffset = i * N;
-                    for(int j = 0; j < matrixes[m][i].Count; j++)
+                    for(int j = 0; j < matrixVariations[m][i].Count; j++)
                     {
-                        if (matrixes[m][i][j] != ' ')
-                            encodedBuilder[frameOffset + matrixOffset + j] = matrixes[m][i][j];
+                        if (matrixVariations[m][i][j] != ' ')
+                            encodedBuilder[frameOffset + matrixOffset + j] = matrixVariations[m][i][j];
                     }
                 }
             }
@@ -104,10 +128,37 @@ namespace DI.Lab5.Realization.Encoders
         public string Encode(string message)
         {
             var normalizedMsg = NormalizeMessage(message);
-            var matrixVariations = MatrixVariations(normalizedMsg);
+            var matrixVariations = FilledMatrixVariations(normalizedMsg);
             return EncodedMessage(matrixVariations, normalizedMsg, _grille.Grille.Count);
         }
 
+        private List<List<List<char>>> OverlayVariations(List<List<List<char>>> variations, string encoded)
+        {
+            var encodedIndex = 0;
+            List<List<List<char>>> overlayed = new List<List<List<char>>>();
+            var matrixSide = _grille.Grille.Count;
+            var matrixSize = matrixSide * matrixSide;
+            for (int m = 0; m < encoded.Length / matrixSize; m++)
+            {
+                overlayed.Add(new List<List<char>>());
+                for (int i = 0; i < matrixSide; i++)
+                {
+                    overlayed[m].Add(new List<char>());
+                    for (int j = 0; j < matrixSide; j++)
+                    {
+                        overlayed[m][i].Add(' ');
+                    }
+                }
+            }
+            while (encodedIndex < encoded.Length)
+            {
+                var matrixIndex = encodedIndex / matrixSize;
+                var matrixRowIndex = encodedIndex % matrixSize / matrixSide;
+                var matrixRowColIndex = encodedIndex % matrixSize % matrixSide;
+                overlayed[matrixIndex][matrixRowIndex][matrixRowColIndex] = encoded[encodedIndex];
+            }
+            return overlayed;
+        }
 
         public string Decode(string encoded)
         {
@@ -115,17 +166,18 @@ namespace DI.Lab5.Realization.Encoders
                 throw new BadEncodedMessageException();
 
             int N = _grille.Grille.Count;
-            var rotations = Rotations(encoded);
+            var variations = MatrixVariations(encoded);
+            //var overlayed = OverlayVariations(variations, encoded);
             var decodedSB = new StringBuilder();
-            for (int m = 0; m < rotations.Count; m++)
+            for (int m = 0; m < variations.Count; m++)
             {
                 int frameOffset = (m / N) * N * N;
-                for (int i = 0; i < rotations[m].Count; i++)
+                for (int i = 0; i < variations[m].Count; i++)
                 {
                     var matrixOffset = i * N;
-                    for (int j = 0; j < rotations[m][i].Count; j++)
+                    for (int j = 0; j < variations[m][i].Count; j++)
                     {
-                        if (rotations[m][i][j] == 'X')
+                        if (variations[m][i][j] != ' ')
                         {
                             decodedSB.Append(encoded[frameOffset + matrixOffset + j]);
                         }

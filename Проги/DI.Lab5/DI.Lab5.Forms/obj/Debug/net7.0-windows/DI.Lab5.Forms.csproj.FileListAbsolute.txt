@@ -1,0 +1,17 @@
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\bin\Debug\net7.0-windows\DI.Lab5.Forms.exe
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\bin\Debug\net7.0-windows\DI.Lab5.Forms.deps.json
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\bin\Debug\net7.0-windows\DI.Lab5.Forms.runtimeconfig.json
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\bin\Debug\net7.0-windows\DI.Lab5.Forms.dll
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\bin\Debug\net7.0-windows\DI.Lab5.Forms.pdb
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\obj\Debug\net7.0-windows\DI.Lab5.Forms.csproj.AssemblyReference.cache
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\obj\Debug\net7.0-windows\DI.Lab5.Forms.Form1.resources
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\obj\Debug\net7.0-windows\DI.Lab5.Forms.csproj.GenerateResource.cache
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\obj\Debug\net7.0-windows\DI.Lab5.Forms.GeneratedMSBuildEditorConfig.editorconfig
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\obj\Debug\net7.0-windows\DI.Lab5.Forms.AssemblyInfoInputs.cache
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\obj\Debug\net7.0-windows\DI.Lab5.Forms.AssemblyInfo.cs
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\obj\Debug\net7.0-windows\DI.Lab5.Forms.csproj.CoreCompileInputs.cache
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\obj\Debug\net7.0-windows\DI.Lab5.Forms.dll
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\obj\Debug\net7.0-windows\refint\DI.Lab5.Forms.dll
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\obj\Debug\net7.0-windows\DI.Lab5.Forms.pdb
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\obj\Debug\net7.0-windows\DI.Lab5.Forms.genruntimeconfig.cache
+D:\4_course\Защита информации\Проги\DI.Lab5\DI.Lab5.Forms\obj\Debug\net7.0-windows\ref\DI.Lab5.Forms.dll
