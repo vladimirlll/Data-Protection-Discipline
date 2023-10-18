@@ -206,5 +206,10 @@ namespace DI.Lab3.Code
             }
 
         }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

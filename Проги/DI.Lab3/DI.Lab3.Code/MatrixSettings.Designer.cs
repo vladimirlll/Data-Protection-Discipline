@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox7 = new GroupBox();
+            dgvMatrix = new DataGridView();
             buttonEditSettings = new Button();
             groupBox4 = new GroupBox();
             groupBox6 = new GroupBox();
@@ -49,28 +50,38 @@
             label3 = new Label();
             buttonAddUser = new Button();
             label1 = new Label();
-            dgvMatrix = new DataGridView();
             groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMatrix).BeginInit();
             groupBox4.SuspendLayout();
             groupBox6.SuspendLayout();
             groupBox5.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvMatrix).BeginInit();
             SuspendLayout();
             // 
             // groupBox7
             // 
             groupBox7.Controls.Add(dgvMatrix);
-            groupBox7.Location = new Point(10, 319);
+            groupBox7.Location = new Point(10, 318);
             groupBox7.Margin = new Padding(3, 2, 3, 2);
             groupBox7.Name = "groupBox7";
             groupBox7.Padding = new Padding(3, 2, 3, 2);
             groupBox7.Size = new Size(679, 311);
             groupBox7.TabIndex = 5;
             groupBox7.TabStop = false;
-            groupBox7.Text = "Матрица прав доступа и привилегии";
+            groupBox7.Text = "Матрица прав доступа";
+            groupBox7.Enter += groupBox7_Enter;
+            // 
+            // dgvMatrix
+            // 
+            dgvMatrix.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMatrix.Location = new Point(2, 34);
+            dgvMatrix.Name = "dgvMatrix";
+            dgvMatrix.RowTemplate.Height = 25;
+            dgvMatrix.Size = new Size(677, 263);
+            dgvMatrix.TabIndex = 9;
+            dgvMatrix.CellValueChanged += dgvMatrix_CellValueChanged;
             // 
             // buttonEditSettings
             // 
@@ -287,16 +298,6 @@
             label1.Size = new Size(0, 15);
             label1.TabIndex = 1;
             // 
-            // dgvMatrix
-            // 
-            dgvMatrix.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMatrix.Location = new Point(2, 34);
-            dgvMatrix.Name = "dgvMatrix";
-            dgvMatrix.RowTemplate.Height = 25;
-            dgvMatrix.Size = new Size(677, 263);
-            dgvMatrix.TabIndex = 9;
-            dgvMatrix.CellValueChanged += dgvMatrix_CellValueChanged;
-            // 
             // MatrixSettings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -310,6 +311,7 @@
             Text = "Редактирование матрицы";
             Load += MatrixSettings_Load;
             groupBox7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvMatrix).EndInit();
             groupBox4.ResumeLayout(false);
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
@@ -321,7 +323,6 @@
             groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvMatrix).EndInit();
             ResumeLayout(false);
         }
 
