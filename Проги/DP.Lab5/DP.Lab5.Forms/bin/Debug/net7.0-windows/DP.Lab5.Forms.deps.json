@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "DP.Lab5.Forms/1.0.0": {
+        "dependencies": {
+          "DP.Lab5.Service": "1.0.0"
+        },
+        "runtime": {
+          "DP.Lab5.Forms.dll": {}
+        }
+      },
+      "DP.Lab5.Service/1.0.0": {
+        "runtime": {
+          "DP.Lab5.Service.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DP.Lab5.Forms/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DP.Lab5.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
