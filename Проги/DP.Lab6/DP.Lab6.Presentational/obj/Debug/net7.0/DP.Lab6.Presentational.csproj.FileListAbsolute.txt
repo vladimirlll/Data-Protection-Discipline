@@ -1,0 +1,15 @@
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\bin\Debug\net7.0\DP.Lab6.Presentational.exe
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\bin\Debug\net7.0\DP.Lab6.Presentational.deps.json
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\bin\Debug\net7.0\DP.Lab6.Presentational.runtimeconfig.json
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\bin\Debug\net7.0\DP.Lab6.Presentational.dll
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\bin\Debug\net7.0\DP.Lab6.Presentational.pdb
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\obj\Debug\net7.0\DP.Lab6.Presentational.csproj.AssemblyReference.cache
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\obj\Debug\net7.0\DP.Lab6.Presentational.GeneratedMSBuildEditorConfig.editorconfig
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\obj\Debug\net7.0\DP.Lab6.Presentational.AssemblyInfoInputs.cache
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\obj\Debug\net7.0\DP.Lab6.Presentational.AssemblyInfo.cs
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\obj\Debug\net7.0\DP.Lab6.Presentational.csproj.CoreCompileInputs.cache
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\obj\Debug\net7.0\DP.Lab6.Presentational.dll
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\obj\Debug\net7.0\refint\DP.Lab6.Presentational.dll
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\obj\Debug\net7.0\DP.Lab6.Presentational.pdb
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\obj\Debug\net7.0\DP.Lab6.Presentational.genruntimeconfig.cache
+D:\4_course\Защита информации\Проги\DP.Lab6\DP.Lab6.Presentational\obj\Debug\net7.0\ref\DP.Lab6.Presentational.dll

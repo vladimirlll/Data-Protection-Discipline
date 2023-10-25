@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "DP.Lab6.Presentational/1.0.0": {
+        "runtime": {
+          "DP.Lab6.Presentational.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DP.Lab6.Presentational/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
