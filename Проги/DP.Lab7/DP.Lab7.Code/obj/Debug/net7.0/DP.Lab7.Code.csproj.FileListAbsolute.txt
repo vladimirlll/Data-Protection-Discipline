@@ -1,0 +1,16 @@
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\bin\Debug\net7.0\DP.Lab7.Code.exe
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\bin\Debug\net7.0\DP.Lab7.Code.deps.json
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\bin\Debug\net7.0\DP.Lab7.Code.runtimeconfig.json
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\bin\Debug\net7.0\DP.Lab7.Code.dll
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\bin\Debug\net7.0\DP.Lab7.Code.pdb
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\obj\Debug\net7.0\DP.Lab7.Code.csproj.AssemblyReference.cache
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\obj\Debug\net7.0\DP.Lab7.Code.GeneratedMSBuildEditorConfig.editorconfig
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\obj\Debug\net7.0\DP.Lab7.Code.AssemblyInfoInputs.cache
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\obj\Debug\net7.0\DP.Lab7.Code.AssemblyInfo.cs
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\obj\Debug\net7.0\DP.Lab7.Code.csproj.CoreCompileInputs.cache
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\obj\Debug\net7.0\DP.Lab7.Code.dll
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\obj\Debug\net7.0\refint\DP.Lab7.Code.dll
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\obj\Debug\net7.0\DP.Lab7.Code.pdb
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\obj\Debug\net7.0\DP.Lab7.Code.genruntimeconfig.cache
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\obj\Debug\net7.0\ref\DP.Lab7.Code.dll
+D:\4_course\Защита информации\Проги\DP.Lab7\DP.Lab7.Code\bin\Debug\net7.0\input.txt
