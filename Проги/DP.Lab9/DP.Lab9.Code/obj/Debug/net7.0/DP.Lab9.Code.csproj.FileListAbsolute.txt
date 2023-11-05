@@ -1,0 +1,15 @@
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\obj\Debug\net7.0\DP.Lab9.Code.csproj.AssemblyReference.cache
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\obj\Debug\net7.0\DP.Lab9.Code.GeneratedMSBuildEditorConfig.editorconfig
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\obj\Debug\net7.0\DP.Lab9.Code.AssemblyInfoInputs.cache
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\obj\Debug\net7.0\DP.Lab9.Code.AssemblyInfo.cs
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\obj\Debug\net7.0\DP.Lab9.Code.csproj.CoreCompileInputs.cache
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\bin\Debug\net7.0\DP.Lab9.Code.exe
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\bin\Debug\net7.0\DP.Lab9.Code.deps.json
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\bin\Debug\net7.0\DP.Lab9.Code.runtimeconfig.json
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\bin\Debug\net7.0\DP.Lab9.Code.dll
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\bin\Debug\net7.0\DP.Lab9.Code.pdb
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\obj\Debug\net7.0\DP.Lab9.Code.dll
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\obj\Debug\net7.0\refint\DP.Lab9.Code.dll
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\obj\Debug\net7.0\DP.Lab9.Code.pdb
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\obj\Debug\net7.0\DP.Lab9.Code.genruntimeconfig.cache
+D:\4_course\Защита информации\Проги\DP.Lab9\DP.Lab9.Code\obj\Debug\net7.0\ref\DP.Lab9.Code.dll
